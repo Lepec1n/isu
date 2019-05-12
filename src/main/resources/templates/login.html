@@ -1,8 +1,9 @@
-<html lang="ru">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title></title>
+    <title>ИСУ им. Перумова</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
@@ -10,6 +11,28 @@
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#loginButton").click(function(){
+                var checkLink = "log_in?username=" + $("#inputLogin").val() + "&password=" + $("#inputPassword").val();
+                $.ajax({url: checkLink, success: function(logged_in){
+                        if (!logged_in) {
+                            window.alert(':)');
+                        }
+                        window.location.href = "index";
+                    }});
+            });
+            $("input").keypress(function(e){
+                if(e.keyCode==13)
+                    $("#loginButton").click();
+            });});
+    </script>
 </head>
 
 <body class="text-center">
@@ -24,7 +47,7 @@
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button id="loginButton" class="btn btn-lg btn-primary btn-block">Sign in</button>
     <p class="mt-5 mb-3 text-muted">© 2019</p>
 </form>
 

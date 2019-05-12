@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -42,7 +42,7 @@
             </ul>
         </div>
         <div class="col-10">
-            <h1>Заголовок какой-то</h1>
+            <h1 th:text="'Личный кабинет: ' + ${username}"></h1>
             <p>
                 <button class="btn btn-primary"><i class="fa fa-plus"></i> Создать</button>
             </p>
