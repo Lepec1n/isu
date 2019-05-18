@@ -9,10 +9,10 @@ import java.util.List;
 public class UserServiceImpl implements IUserService {
 
     @Autowired
-    UserRepository userReposotory;
+    UserRepository userRepository;
 
     @Override
     public List<User> findAll() {
-        return userReposotory.findAll();
+        return userRepository.findAll();
     }
 }
