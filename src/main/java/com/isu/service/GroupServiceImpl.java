@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GroupServiceImpl implements IGroupService{
@@ -38,7 +39,21 @@ public class GroupServiceImpl implements IGroupService{
 
     @Override
     public List<User> getStudents(Long groupId) {
-        List<User> students =  groupRepository.findById(groupId).get().getStudents();
+        Optional<Group> group = groupRepository.findById(groupId);
+        List<User> students = null;
+        if (group.isPresent()) {
+            students = group.get().getStudents();
+        }
         return students;
+    }
+
+    @Override
+    public Group getGroup(Long groupId) {
+        Optional<Group> group = groupRepository.findById(groupId);
+        if (group.isPresent()) {
+            return group.get();
+        } else {
+            return null;
+        }
     }
 }

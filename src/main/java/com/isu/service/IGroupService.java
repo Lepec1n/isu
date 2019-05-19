@@ -13,5 +13,7 @@ public interface IGroupService {
 
     Group addStudent(Group group, User student);
 
+    Group getGroup(Long groupId);
+
     List<User> getStudents(Long groupId);
 }
