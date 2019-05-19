@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @Scope("session")
-public class MainController {
+public class LoginController {
     @Autowired
     IUserService userService;
 
@@ -57,6 +57,7 @@ public class MainController {
         return this.index();
     }
 
+    //todo move to AdminController @vergir
     @GetMapping("/admin")
     public ModelAndView adminPage() {
         if (this.currentUser == null) {
