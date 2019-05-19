@@ -56,7 +56,7 @@
                 <th:block th:each="student, iter : ${students}">
                     <tr>
                         <th scope="row" th:text="${iter.index + 1}"></th>
-                        <td th:text="${student.name}">Mark</td>
+                        <td th:text="${student.getName()} + ' ' + ${student.getLastName()}">Mark</td>
                         <td th:text="${student.getRole().getName()}">)</td>
                     </tr>
                 </th:block>
