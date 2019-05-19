@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ИСУ им. Перумова</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+
+<body class="text-center">
+<form class="form-signin" th:action="@{/registration}" method="POST" th:object="${user}">
+    <img class="mb-4" src="http://lorempixel.com/72/72/" alt="" width="72" height="72">
+    <h1>Регистрация</h1>
+
+    <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+           class="validation-message"></label>
+    <input type="text" th:field="*{name}" placeholder="Имя"
+           class="form-control"/>
+
+    <label	th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+              class="validation-message"></label>
+    <input type="text" th:field="*{lastName}"
+           placeholder="Фамилия" class="form-control" />
+
+    <input type="text" th:field="*{username}" placeholder="Имя пользователя"
+           class="form-control" /> <label
+        th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+        class="validation-message"></label>
+
+    <input type="password" th:field="*{password}"
+           placeholder="Пароль" class="form-control" /> <label
+        th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+        class="validation-message"></label>
+    <button id="loginButton" class="btn btn-lg btn-success btn-block" th:text="Зарегистрироваться"></button>
+    <p class="mt-5 mb-3 text-muted">© 2019</p>
+</form>
+
+
+</body>
+</html>

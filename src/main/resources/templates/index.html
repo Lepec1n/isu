@@ -34,34 +34,8 @@
                 </li>
             </ul>
         </div>
-        <div class="col-10" th:if="${group == null}">
-            <div class="alert alert-warning">
-                Извините, но такой группы не существует
-            </div>
-        </div>
-        <div class="col-10" th:unless="${group == null}">
-            <h1 th:text="'Группа ' + ${group.getName()}">Группа</h1>
-            <div class="alert alert-warning" th:if="${students == null || students.size() == 0}">
-                К сожалению, в данной группе нет студентов
-            </div>
-            <table class="table table-striped" th:unless="${students == null || students.size() == 0}">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Status</th>
-                </tr>
-                </thead>
-                <tbody>
-                <th:block th:each="student, iter : ${students}">
-                    <tr>
-                        <th scope="row" th:text="${iter.index + 1}"></th>
-                        <td th:text="${student.name}">Mark</td>
-                        <td th:text="${student.getRole().getName()}">)</td>
-                    </tr>
-                </th:block>
-                </tbody>
-            </table>
+        <div class="col-10">
+            <h1 th:text="${welcomeMessage}"></h1>
         </div>
     </div>
 </div>

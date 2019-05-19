@@ -1,17 +1,17 @@
 package com.isu.model;
 
-public enum Role {
-    STUDENT("Student"),
-    MAGE("Mage"),
-    ADMIN("Admin");
+import lombok.Data;
 
-    String value;
+import javax.persistence.*;
 
-    private Role(String val){
-        this.value = val;
-    }
+@Data
+@Entity
+@Table(name = "roles")
+public class Role {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "role_id")
+    private int id;
 
-    public String getValue(){
-        return this.value;
-    }
+    private String name;
 }
