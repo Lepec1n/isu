@@ -13,16 +13,15 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">ИСУ им. Перумова</a>
+    <a class="navbar-brand" th:href="@{/admin/}">ИСУ им. Перумова</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Ссылка 1</a>
-            <a class="nav-item nav-link" href="#">Ссылка 2</a>
-            <a class="nav-item nav-link" href="#">Ссылка 3</a>
+            <a class="nav-item nav-link" th:href="@{/}">К основному сайту</a>
+            <a class="nav-item nav-link" th:href="@{/logout}">Выйти</a>
         </div>
     </div>
 </nav>
@@ -31,13 +30,10 @@
         <div class="col-2">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Главная</a>
+                    <a class="nav-link" th:href="@{/admin/}">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Сущность 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Сущность 2</a>
+                    <a class="nav-link" th:href="@{/admin/status/}">Статусы</a>
                 </li>
             </ul>
         </div>

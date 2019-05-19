@@ -1,4 +1,4 @@
-package com.isu.controller;
+package com.isu.controller.admin;
 
 import com.isu.model.User;
 import com.isu.service.UserService;
