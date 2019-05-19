@@ -41,8 +41,6 @@ public class MainController {
 
         for (User user : users) {
             boolean sameUsername = username.equals(user.getName());
-            String hash = user.getPwdHash();
-            String candidate = userService.generatePasswordHash(password);
             boolean samePassword = userService.generatePasswordHash(password).equals(user.getPwdHash());
             if (sameUsername && samePassword) {
                 this.currentUser = user;
