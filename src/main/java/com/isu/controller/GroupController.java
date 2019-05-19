@@ -24,7 +24,7 @@ public class GroupController {
         List<User> students = null;
 
         if (group != null) {
-            students = groupService.getStudents(groupId);
+            students = group.getStudents();
         }
 
         ModelAndView mav = new ModelAndView("group");
