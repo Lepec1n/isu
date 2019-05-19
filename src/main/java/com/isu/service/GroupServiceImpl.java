@@ -24,7 +24,7 @@ public class GroupServiceImpl implements IGroupService{
 
     @Override
     public Group createEmptyGroup() {
-        Group group = new Group(Collections.emptyList());
+        Group group = new Group("test", Collections.emptyList());
         groupRepository.save(group);
         return group;
     }
