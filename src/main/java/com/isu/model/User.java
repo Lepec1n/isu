@@ -19,12 +19,38 @@ public class User {
 
     private String name;
 
+    private String pwdHash;
+
+    private int role;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id", nullable = false)
     private Group group;
 
-    public User(String name, Group group){
+    public User(String name, String pwdHash, int role, Group group){
         this.name = name;
+        this.pwdHash = pwdHash;
+        this.role = role;
         this.group = group;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPwdHash() {
+        return pwdHash;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public Group getGroup() {
+        return group;
     }
 }

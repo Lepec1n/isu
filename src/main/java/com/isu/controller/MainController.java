@@ -1,17 +1,24 @@
 package com.isu.controller;
 
+import com.isu.model.User;
+import com.isu.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 
 @Controller
 @Scope("session")
 public class MainController {
+    @Autowired
+    IUserService userService;
 
-    String currentUser = null;
+    User currentUser = null;
 
     @GetMapping({"/", "/index"})
     public ModelAndView index() {
@@ -29,10 +36,18 @@ public class MainController {
     }
 
     @GetMapping("/log_in")
-    public int logIn(@RequestParam String username) {
-        if (true) { //todo: add DB check
-            this.currentUser = username;
-            return 1;
+    public int logIn(@RequestParam String username, @RequestParam String password) {
+        List<User> users = userService.findAll();
+
+        for (User user : users) {
+            boolean sameUsername = username.equals(user.getName());
+            String hash = user.getPwdHash();
+            String candidate = userService.generatePasswordHash(password);
+            boolean samePassword = userService.generatePasswordHash(password).equals(user.getPwdHash());
+            if (sameUsername && samePassword) {
+                this.currentUser = user;
+                return 1;
+            }
         }
 
         return 0;
