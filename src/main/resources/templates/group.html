@@ -57,7 +57,8 @@
                     <tr>
                         <th scope="row" th:text="${iter.index + 1}"></th>
                         <td th:text="${student.getName()} + ' ' + ${student.getLastName()}">Mark</td>
-                        <td th:text="${student.getRole().getName()}">)</td>
+                        <td th:if="${student.getStatus() != null}" th:text="${student.getStatus().getName()}"></td>
+                        <td th:unless="${student.getStatus() != null}" th:text="Неизвестно"></td>
                     </tr>
                 </th:block>
                 </tbody>
