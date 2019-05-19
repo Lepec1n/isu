@@ -42,59 +42,7 @@
             </ul>
         </div>
         <div class="col-10">
-            <h1 th:text="'Личный кабинет: ' + ${username}"></h1>
-            <p>
-                <button class="btn btn-primary"><i class="fa fa-plus"></i> Создать</button>
-            </p>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-success"><i class="fa fa-fw fa-eye"></i></a>
-                        <a href="" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-edit"></i></a>
-                        <a href="" onclick="return confirm('Вы уверены, что хотите удалить эту запись?')"
-                           class="btn btn-sm btn-danger"><i class="fa fa-fw fa-times"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-success"><i class="fa fa-fw fa-eye"></i></a>
-                        <a href="" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-edit"></i></a>
-                        <a href="" onclick="return confirm('Вы уверены, что хотите удалить эту запись?')"
-                           class="btn btn-sm btn-danger"><i class="fa fa-fw fa-times"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-success"><i class="fa fa-fw fa-eye"></i></a>
-                        <a href="" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-edit"></i></a>
-                        <a href="" onclick="return confirm('Вы уверены, что хотите удалить эту запись?')"
-                           class="btn btn-sm btn-danger"><i class="fa fa-fw fa-times"></i></a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <h1 th:text="${welcomeMessage}"></h1>
         </div>
     </div>
 </div>
