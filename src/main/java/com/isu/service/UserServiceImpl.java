@@ -24,8 +24,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public User createStudent(String name, String password, Role role, Group group) {
         String pwdHash = this.generatePasswordHash(password);
-        int dbRole = role.toInt();
-        User student = new User(name, pwdHash, dbRole, group);
+        User student = new User(name, pwdHash, role, group);
         userRepository.save(student);
         return student;
     }

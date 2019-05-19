@@ -1,28 +1,17 @@
 package com.isu.model;
 
 public enum Role {
-    STUDENT,
-    MAGE,
-    ADMIN;
+    STUDENT("Student"),
+    MAGE("Mage"),
+    ADMIN("Admin");
 
-    public int toInt() {
-        switch (this) {
-            case STUDENT: return 1;
-            case MAGE: return 2;
-            case ADMIN: return 3;
-        }
+    String value;
 
-        return 0;
+    private Role(String val){
+        this.value = val;
     }
 
-    public static Role fromInt(int role) {
-        for (Role candidate : Role.values()) {
-            if (candidate.toInt() == role) {
-                return candidate;
-            }
-        }
-
-        // must never happen
-        return null;
+    public String getValue(){
+        return this.value;
     }
 }
