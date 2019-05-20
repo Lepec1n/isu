@@ -20,7 +20,7 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("login/login");
         return modelAndView;
     }
 
@@ -29,7 +29,7 @@ public class LoginController {
         ModelAndView modelAndView = new ModelAndView();
         User user = new User();
         modelAndView.addObject("user", user);
-        modelAndView.setViewName("registration");
+        modelAndView.setViewName("login/registration");
         return modelAndView;
     }
 
@@ -43,7 +43,7 @@ public class LoginController {
                             "Пользователь с таким именем пользователя уже существует");
         }
         if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("registration");
+            modelAndView.setViewName("login/registration");
         } else {
             userService.saveUser(user);
             return new ModelAndView("redirect:/login");

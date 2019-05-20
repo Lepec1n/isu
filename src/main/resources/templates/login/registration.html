@@ -18,9 +18,8 @@
             crossorigin="anonymous"></script>
 </head>
 
-<body class="text-center">
+<body class="text-center" style="flex-direction: column;">
 <form class="form-signin" th:action="@{/registration}" method="POST" th:object="${user}">
-    <img class="mb-4" src="http://lorempixel.com/72/72/" alt="" width="72" height="72">
     <h1>Регистрация</h1>
 
     <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
@@ -43,9 +42,9 @@
         th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
         class="validation-message"></label>
     <button id="loginButton" class="btn btn-lg btn-success btn-block" th:text="Зарегистрироваться"></button>
-    <p class="mt-5 mb-3 text-muted">© 2019</p>
 </form>
 
+<div th:insert="~{common/footer :: copy}"></div>
 
 </body>
 </html>

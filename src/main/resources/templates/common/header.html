@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="student">
+        <a class="navbar-brand" th:href="@{/}">ИСУ им. Перумова</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" th:href="@{/my_group}">Моя группа</a>
+                <a class="nav-item nav-link" th:href="@{/logout}">Выйти</a>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="admin">
+        <a class="navbar-brand" th:href="@{/admin/}">ИСУ им. Перумова</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" th:href="@{/}">К основному сайту</a>
+                <a class="nav-item nav-link" th:href="@{/logout}">Выйти</a>
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+</html>
