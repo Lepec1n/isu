@@ -17241,6 +17241,18 @@
 					"name": "ActivityDiagram1",
 					"ownedViews": [
 						{
+							"_type": "RoundRectView",
+							"_id": "AAAAAAFuDMITUs8Iko4=",
+							"_parent": {
+								"$ref": "AAAAAAFuDKd9OcXnvzs="
+							},
+							"font": "Arial;13;0",
+							"left": 248,
+							"top": 16,
+							"width": 601,
+							"height": 569
+						},
+						{
 							"_type": "UMLControlNodeView",
 							"_id": "AAAAAAFuDKfptsYaDu8=",
 							"_parent": {
