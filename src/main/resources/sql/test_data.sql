@@ -4,7 +4,7 @@ insert into roles values (3, 'MAGE');
 
 insert into groups values (1, 'M1');
 
-insert into statuses
+insert into statuses values
 (1, 'STUDENT');
 
 --qwerty
