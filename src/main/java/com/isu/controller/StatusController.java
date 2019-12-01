@@ -1,5 +1,6 @@
-package com.isu.controller.admin;
+package com.isu.controller;
 
+import com.isu.exception.StatusNotFoundException;
 import com.isu.model.Status;
 import com.isu.service.StatusService;
 import org.springframework.beans.factory.annotation.Autowired;

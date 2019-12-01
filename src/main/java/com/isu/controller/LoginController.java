@@ -3,7 +3,7 @@ package com.isu.controller;
 import javax.validation.Valid;
 
 import com.isu.model.User;
-import com.isu.service.UserService;
+import com.isu.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {

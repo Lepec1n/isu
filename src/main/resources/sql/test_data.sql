@@ -15,7 +15,7 @@ insert into users values
 --12345
 insert into users values
 (2, 1, 'Попов', 'Даниил',
-'2a$10$.HlQGRg0R2FNps2clXEoiOcIHOS8/ao9/H/inktXbVj2kkTVoVise', 'daniil_popov', 1, 1);
+'$2a$10$.HlQGRg0R2FNps2clXEoiOcIHOS8/ao9/H/inktXbVj2kkTVoVise', 'daniil_popov', 1, 1);
 
 --asdfg
 insert into users values
