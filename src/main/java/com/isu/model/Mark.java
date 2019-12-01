@@ -14,14 +14,12 @@ public class Mark {
     @Column(name = "mark_id")
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "discipline")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "discipline_id")
     private Discipline discipline;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "user")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
     private User user;
 
     private Integer mark;

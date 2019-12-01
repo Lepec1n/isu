@@ -15,13 +15,11 @@ public class LiteratureRequest {
     @Column(name = "literature_request_id")
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "literature")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "literature_id")
     private Literature literature;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "user")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 }
