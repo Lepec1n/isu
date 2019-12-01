@@ -21,6 +21,5 @@ public class Status {
     @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY,
             mappedBy = "group")
-
     private List<User> users;
 }

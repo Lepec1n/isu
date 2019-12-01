@@ -1,7 +1,7 @@
-package com.isu.controller.admin;
+package com.isu.controller;
 
 import com.isu.model.User;
-import com.isu.service.UserService;
+import com.isu.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdminController {
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView home() {

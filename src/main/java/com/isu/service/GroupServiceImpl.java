@@ -25,4 +25,34 @@ public class GroupServiceImpl implements IGroupService{
         }
         return students;
     }
+
+    @Override
+    public List<User> getStudents(Group group) {
+        return null;
+    }
+
+    @Override
+    public List<Group> findAll() {
+        return null;
+    }
+
+    @Override
+    public List<Group> findGroupByName() {
+        return null;
+    }
+
+    @Override
+    public Group createGroup(String name) {
+        return null;
+    }
+
+    @Override
+    public Group updateGroup(Group group) {
+        return null;
+    }
+
+    @Override
+    public void deleteGroup(Group group) {
+
+    }
 }
