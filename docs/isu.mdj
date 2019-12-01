@@ -1063,7 +1063,7 @@
 											"top": 1317,
 											"width": 92.18701171875,
 											"height": 13,
-											"text": "студент"
+											"text": "Архивариус"
 										},
 										{
 											"_type": "LabelView",
@@ -1398,8 +1398,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 159,
-									"top": 1200,
+									"left": 144,
+									"top": 1155,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1419,8 +1419,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 174,
-									"top": 1200,
+									"left": 144,
+									"top": 1140,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1440,8 +1440,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 130,
-									"top": 1201,
+									"left": 144,
+									"top": 1185,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1453,12 +1453,12 @@
 							],
 							"font": "Arial;13;0",
 							"head": {
-								"$ref": "AAAAAAFp+9is/3cQYLM="
-							},
-							"tail": {
 								"$ref": "AAAAAAFp+9jLA3c6PL0="
 							},
-							"points": "145:1159;145:1256",
+							"tail": {
+								"$ref": "AAAAAAFp+9is/3cQYLM="
+							},
+							"points": "145:1256;145:1176;144:1176;144:1159",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFp+9jLbXdkFZg="
@@ -8965,7 +8965,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "студент",
+					"name": "Архивариус",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -9227,10 +9227,10 @@
 								"$ref": "AAAAAAFp+9jLA3c4SPE="
 							},
 							"source": {
-								"$ref": "AAAAAAFp+9jLA3c4SPE="
+								"$ref": "AAAAAAFp+9is/3cO4/U="
 							},
 							"target": {
-								"$ref": "AAAAAAFp+9is/3cO4/U="
+								"$ref": "AAAAAAFp+9jLA3c4SPE="
 							}
 						},
 						{
@@ -12684,7 +12684,7 @@
 									"font": "Arial;13;0",
 									"left": 289,
 									"top": 204.5,
-									"width": 118,
+									"width": 119.255859375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFtxjoy9/KOO3Y="
@@ -13443,7 +13443,7 @@
 									"font": "Arial;13;0",
 									"left": 321,
 									"top": 108.5,
-									"width": 118,
+									"width": 119.255859375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFtxk4ao/XWF0E="
@@ -13642,7 +13642,7 @@
 									"font": "Arial;13;0",
 									"left": 235.5,
 									"top": 204.5,
-									"width": 286,
+									"width": 286.5546875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFtxlQzoviE8Y8="
@@ -14496,7 +14496,7 @@
 									"font": "Arial;13;0",
 									"left": 230,
 									"top": 204.5,
-									"width": 298,
+									"width": 298.48193359375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFtxlOno/djwe0="
@@ -14964,7 +14964,7 @@
 									"font": "Arial;13;0",
 									"left": 321,
 									"top": 108.5,
-									"width": 118,
+									"width": 119.255859375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFtxlOnpPd6mGU="
@@ -15549,7 +15549,7 @@
 									"font": "Arial;13;0",
 									"left": 313,
 									"top": 100.5,
-									"width": 118,
+									"width": 119.255859375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFtyTGiB6jbgzw="
@@ -15748,7 +15748,7 @@
 									"font": "Arial;13;0",
 									"left": 283.5,
 									"top": 204.5,
-									"width": 169,
+									"width": 170.00537109375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFtyTasRKuhM1c="
@@ -16602,7 +16602,7 @@
 									"font": "Arial;13;0",
 									"left": 233,
 									"top": 196.5,
-									"width": 275,
+									"width": 275.63037109375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFtyTYI6aq5KIU="
@@ -16801,7 +16801,7 @@
 									"font": "Arial;13;0",
 									"left": 313,
 									"top": 100.5,
-									"width": 118,
+									"width": 119.255859375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFtyTYI6arEOOI="
@@ -24122,9 +24122,9 @@
 												"$ref": "AAAAAAFuDR04cdkRHMQ="
 											},
 											"font": "Arial;13;0",
-											"left": 71.58642578125,
+											"left": 75.97900390625,
 											"top": 10,
-											"width": 250.06298828125,
+											"width": 275.0029296875,
 											"height": 13,
 											"text": "Получение информации о магических трудах"
 										},
@@ -24137,7 +24137,7 @@
 											"font": "Arial;13;1",
 											"left": 10,
 											"top": 10,
-											"width": 56.58642578125,
+											"width": 60.97900390625,
 											"height": 13,
 											"text": "interaction"
 										}
@@ -24730,9 +24730,9 @@
 												"$ref": "AAAAAAFuDSspXeiDSZI="
 											},
 											"font": "Arial;13;0",
-											"left": 71.58642578125,
+											"left": 75.97900390625,
 											"top": 5,
-											"width": 250.06298828125,
+											"width": 275.0029296875,
 											"height": 13,
 											"text": "Получение информации о магических трудах"
 										},
@@ -24745,7 +24745,7 @@
 											"font": "Arial;13;1",
 											"left": 10,
 											"top": 5,
-											"width": 56.58642578125,
+											"width": 60.97900390625,
 											"height": 13,
 											"text": "interaction"
 										}
@@ -25700,6 +25700,33 @@
 					},
 					"name": "Role5",
 					"type": ""
+				}
+			]
+		},
+		{
+			"_type": "UMLStateMachine",
+			"_id": "AAAAAAFuwPOLlr/0gIM=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "StateMachine2",
+			"ownedElements": [
+				{
+					"_type": "UMLStatechartDiagram",
+					"_id": "AAAAAAFuwPOLlr/28oU=",
+					"_parent": {
+						"$ref": "AAAAAAFuwPOLlr/0gIM="
+					},
+					"name": "StatechartDiagram1"
+				}
+			],
+			"regions": [
+				{
+					"_type": "UMLRegion",
+					"_id": "AAAAAAFuwPOLlr/17lQ=",
+					"_parent": {
+						"$ref": "AAAAAAFuwPOLlr/0gIM="
+					}
 				}
 			]
 		}
