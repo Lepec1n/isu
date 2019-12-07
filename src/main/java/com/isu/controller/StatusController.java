@@ -43,7 +43,7 @@ public class StatusController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ModelAndView create(@Valid Status status) {
-        statusService.saveStatus(status);
+        statusService.create(status);
         return new ModelAndView("redirect:/admin/status/");
 
     }
@@ -51,12 +51,7 @@ public class StatusController {
     @RequestMapping(value = "/edit/{statusId}", method = RequestMethod.GET)
     public ModelAndView editPage(@PathVariable("statusId") long statusId) {
         ModelAndView modelAndView = new ModelAndView();
-
-        Optional<Status> optionalStatus = statusService.findStatusById(statusId);
-        if (!optionalStatus.isPresent())
-            throw new StatusNotFoundException();
-
-        Status status = optionalStatus.get();
+        Status status = statusService.findStatusById(statusId);
 
         modelAndView.addObject("status", status);
         modelAndView.setViewName("admin/status/edit");
@@ -65,23 +60,15 @@ public class StatusController {
 
     @RequestMapping(value = "/edit/{statusId}", method = RequestMethod.POST)
     public ModelAndView edit(@PathVariable("statusId") long statusId, @Valid Status newStatus) {
-        Optional<Status> optionalStatus = statusService.findStatusById(statusId);
-        if (!optionalStatus.isPresent())
-            throw new StatusNotFoundException();
-
-        Status status = optionalStatus.get();
-        statusService.updateStatus(status, newStatus);
+        newStatus.setId(statusId);
+        statusService.update(newStatus);
 
         return new ModelAndView("redirect:/admin/status/");
     }
 
     @RequestMapping(value = "/delete/{statusId}", method = RequestMethod.POST)
     public ModelAndView edit(@PathVariable("statusId") long statusId) {
-        Optional<Status> optionalStatus = statusService.findStatusById(statusId);
-        if (!optionalStatus.isPresent())
-            throw new StatusNotFoundException();
-
-        statusService.deleteStatusById(statusId);
+        statusService.delete(statusId);
         return new ModelAndView("redirect:/admin/status/");
     }
 

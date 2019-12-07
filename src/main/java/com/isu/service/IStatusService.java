@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface IStatusService {
     List<Status> getStatuses();
-    void saveStatus(Status status);
-    void updateStatus(Status status, Status newStatus);
-    Optional<Status> findStatusById(long id);
-    void deleteStatusById(long statusId);
+    Status create(Status status);
+    Status update(Status newStatus);
+    Status findStatusById(long id);
+    void delete(long statusId);
 }

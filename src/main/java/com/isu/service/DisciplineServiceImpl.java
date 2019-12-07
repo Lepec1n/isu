@@ -5,10 +5,12 @@ import com.isu.exception.DisciplineNotFoundException;
 import com.isu.model.Discipline;
 import com.isu.repository.DisciplineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class DisciplineServiceImpl implements IDisciplineService{
 
     @Autowired
@@ -45,7 +47,7 @@ public class DisciplineServiceImpl implements IDisciplineService{
     @Override
     public Discipline update(Discipline discipline) {
         Discipline dbDiscipline = findById(discipline.getId());
-        dbDiscipline.setName(dbDiscipline.getName());
+        dbDiscipline.setName(discipline.getName());
         disciplineRepository.save(dbDiscipline);
         return dbDiscipline;
     }

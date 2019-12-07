@@ -8,10 +8,12 @@ import com.isu.model.User;
 import com.isu.repository.LiteratureRepository;
 import com.isu.repository.LiteratureRequestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LiteratureServiceImpl implements ILiteratureService {
 
     private static final Boolean GIVEN_OUT = true;
