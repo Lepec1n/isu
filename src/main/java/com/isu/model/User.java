@@ -3,6 +3,8 @@ package com.isu.model;
 import javax.persistence.*;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
@@ -12,6 +14,8 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "users")
+@Getter
+@Setter
 public class User {
 
     @Id
@@ -31,8 +35,6 @@ public class User {
 
     @NotEmpty(message = "*Пожалуйста, введите вашу фамилию")
     private String lastName;
-
-    private int active;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "users_roles",
@@ -57,4 +59,9 @@ public class User {
             fetch = FetchType.LAZY,
             mappedBy = "user")
     private List<Mark> marks;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
+    private User inviter;
+
 }

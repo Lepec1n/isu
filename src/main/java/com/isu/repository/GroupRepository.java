@@ -10,5 +10,7 @@ import java.util.List;
 public interface GroupRepository extends CrudRepository<Group, Long> {
 
     List<Group> findAll();
+
+    Group findGroupByName(String name);
 }
 

@@ -1,5 +1,6 @@
 package com.isu.service;
 
+import com.isu.exception.UserNotFoundException;
 import com.isu.model.Role;
 import com.isu.model.User;
 import com.isu.repository.RoleRepository;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 
 @Service("userService")
 public class UserServiceImpl implements IUserService{
@@ -33,12 +36,31 @@ public class UserServiceImpl implements IUserService{
     }
 
     @Override
-    public void saveUser(User user) {
+    public User saveStudent(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setActive(1);
         Role userRole = roleRepository.findByName(Role.STUDENT);
         user.setRoles(new HashSet<>(Arrays.asList(userRole)));
         userRepository.save(user);
+        return user;
+    }
+
+    @Override
+    public List<User> findAllUsers() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public User findUserById(Long id) {
+        Optional<User> dbUserContainer = userRepository.findById(id);
+        if(!dbUserContainer.isPresent()){
+            throw new UserNotFoundException(id);
+        }
+        return dbUserContainer.get();
+    }
+
+    @Override
+    public List<User> finAllUsersByRole(Role role) {
+        return null;
     }
 
 }

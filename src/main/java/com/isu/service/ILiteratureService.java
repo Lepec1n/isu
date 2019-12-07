@@ -12,7 +12,7 @@ public interface ILiteratureService {
 
     Literature findLiteratureByName(String name);
 
-    LiteratureRequest leaveRequest(Literature literature, User user);
+    LiteratureRequest createRequest(Literature literature, User user);
 
     LiteratureRequest leaveRequest(String literatureName, User user);
 

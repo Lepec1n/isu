@@ -18,5 +18,8 @@ public class Literature {
     @NotEmpty(message = "*Введите название магического труда")
     private String name;
 
+    @NotEmpty(message = "*Введите описание магического труда")
+    private String preview;
+
     private Boolean givenOut;
 }

@@ -45,7 +45,7 @@ public class LoginController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("login/registration");
         } else {
-            userService.saveUser(user);
+            userService.saveStudent(user);
             return new ModelAndView("redirect:/login");
         }
         return modelAndView;

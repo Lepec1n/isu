@@ -13,11 +13,12 @@ public interface IGroupService {
 
     List<Group> findAll();
 
-    List<Group> findGroupByName();
+    Group findGroupByName(String groupName);
 
     Group createGroup(String name);
 
     Group updateGroup(Group group);
 
     void deleteGroup(Group group);
+
 }

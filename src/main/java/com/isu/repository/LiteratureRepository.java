@@ -8,4 +8,6 @@ import java.util.List;
 public interface LiteratureRepository extends JpaRepository<Literature, Long> {
 
     List<Literature> findAll();
+
+    Literature findLiteratureByName(String name);
 }

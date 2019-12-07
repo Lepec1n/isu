@@ -2,12 +2,16 @@ package com.isu.model;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "literature_request")
+@Getter
+@Setter
 public class LiteratureRequest {
 
     @Id

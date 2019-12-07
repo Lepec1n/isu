@@ -1,6 +1,7 @@
 package com.isu.service;
 
 
+import com.isu.exception.GroupNotFoundException;
 import com.isu.model.Group;
 import com.isu.model.User;
 import com.isu.repository.GroupRepository;
@@ -19,40 +20,53 @@ public class GroupServiceImpl implements IGroupService{
     @Override
     public List<User> getStudents(Long groupId) {
         Optional<Group> group = groupRepository.findById(groupId);
-        List<User> students = null;
         if (group.isPresent()) {
-            students = group.get().getStudents();
+            return group.get().getStudents();
+        } else {
+            throw new GroupNotFoundException(groupId);
         }
-        return students;
     }
 
     @Override
     public List<User> getStudents(Group group) {
-        return null;
+        return group.getStudents();
     }
 
     @Override
     public List<Group> findAll() {
-        return null;
+        return groupRepository.findAll();
     }
 
     @Override
-    public List<Group> findGroupByName() {
-        return null;
+    public Group findGroupByName(String name) {
+        return groupRepository.findGroupByName(name);
     }
 
     @Override
     public Group createGroup(String name) {
-        return null;
+        Group group = new Group();
+        group.setName(name);
+        groupRepository.save(group);
+        return group;
     }
 
     @Override
     public Group updateGroup(Group group) {
-        return null;
+        Optional<Group> dbGroupContainer = groupRepository.findById(group.getId());
+        if(!dbGroupContainer.isPresent())
+            throw new GroupNotFoundException(group.getId());
+        Group dbGroup = dbGroupContainer.get();
+        dbGroup.setName(group.getName());
+        dbGroup.setStudents(group.getStudents());
+        groupRepository.save(dbGroup);
+        return dbGroup;
     }
 
     @Override
     public void deleteGroup(Group group) {
-
+        Optional<Group> dbGroupContainer = groupRepository.findById(group.getId());
+        if(!dbGroupContainer.isPresent())
+            throw new GroupNotFoundException(group.getId());
+        groupRepository.delete(dbGroupContainer.get());
     }
 }
