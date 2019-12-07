@@ -24,8 +24,8 @@ public class Group {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "group")
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "group_id")
     private List<User> students;
 
     @ManyToOne(cascade = CascadeType.ALL)

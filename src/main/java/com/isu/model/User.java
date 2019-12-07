@@ -53,13 +53,13 @@ public class User {
     private Status status;
 
     @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "user")
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private List<LiteratureRequest> literatureRequests;
 
     @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "user")
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private List<Mark> marks;
 
     @OneToOne(fetch = FetchType.LAZY)

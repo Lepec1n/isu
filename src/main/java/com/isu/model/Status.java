@@ -17,9 +17,4 @@ public class Status {
     private Long id;
 
     private String name;
-
-    @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "group")
-    private List<User> users;
 }
