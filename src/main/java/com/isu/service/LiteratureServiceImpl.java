@@ -27,7 +27,15 @@ public class LiteratureServiceImpl implements ILiteratureService {
     }
 
     @Override
-    public Literature findLiteratureByName(String name) {
+    public Literature findLiterature(Long id) {
+        Optional<Literature> dbLiteratureContainer = literatureRepository.findById(id);
+        if(!dbLiteratureContainer.isPresent())
+            throw new LiteratureNotFoundException(id);
+        return dbLiteratureContainer.get();
+    }
+
+    @Override
+    public Literature findLiterature(String name) {
         return literatureRepository.findLiteratureByName(name);
     }
 
@@ -42,7 +50,7 @@ public class LiteratureServiceImpl implements ILiteratureService {
 
     @Override
     public LiteratureRequest leaveRequest(String literatureName, User user) {
-        return createRequest(findLiteratureByName(literatureName), user);
+        return createRequest(findLiterature(literatureName), user);
     }
 
     @Override
@@ -80,10 +88,7 @@ public class LiteratureServiceImpl implements ILiteratureService {
 
     @Override
     public Literature updateLiterature(Literature literature) {
-        Optional<Literature> dbLiteratureContainer = literatureRepository.findById(literature.getId());
-        if(!dbLiteratureContainer.isPresent())
-            throw new LiteratureNotFoundException(literature.getId());
-        Literature dbLiterature = dbLiteratureContainer.get();
+        Literature dbLiterature = findLiterature(literature.getId());
         dbLiterature.setPreview(literature.getPreview());
         dbLiterature.setName(literature.getName());
         dbLiterature.setGivenOut(literature.getGivenOut());

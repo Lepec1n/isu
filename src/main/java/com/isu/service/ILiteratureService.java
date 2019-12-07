@@ -10,7 +10,9 @@ public interface ILiteratureService {
 
     List<Literature> findAll();
 
-    Literature findLiteratureByName(String name);
+    Literature findLiterature(Long id);
+
+    Literature findLiterature(String name);
 
     LiteratureRequest createRequest(Literature literature, User user);
 
