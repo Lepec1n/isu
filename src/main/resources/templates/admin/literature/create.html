@@ -19,10 +19,13 @@
             <input type="text" th:field="*{preview}" placeholder="Описание" required
                    class="form-control"/>
         </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" th:field="*{givenOut}">
-            <label th:if="${#fields.hasErrors('givenOut')}" th:errors="*{givenOut}"
-                   class="validation-message"></label>
+        <div class="form-group">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" th:field="*{givenOut}">
+                <label class="form-check-label">Выдана</label>
+                <label th:if="${#fields.hasErrors('givenOut')}" th:errors="*{givenOut}"
+                       class="validation-message"></label>
+            </div>
         </div>
         <div class="mt-3">
             <a class="btn btn-primary" th:href="@{/admin/literature/}">Назад</a>
