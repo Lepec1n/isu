@@ -5,7 +5,7 @@
 </head>
 <body>
 <div class="col-10" layout:fragment="content">
-    <h1>Статусы</h1>
+    <h1>Группы</h1>
     <p>
         <a class="btn btn-primary" th:href="@{/admin/group/create}"><i class="fa fa-plus"></i> Создать</a>
     </p>
@@ -28,9 +28,9 @@
                 <td th:text="${group.getId()}"></td>
                 <td th:text="${group.getName()}"></td>
                 <td>
-                    <a th:href="@{/admin/status/edit} + '/' + ${status.getId()}" class="btn btn-sm btn-primary"><i
+                    <a th:href="@{/admin/group/edit} + '/' + ${group.getId()}" class="btn btn-sm btn-primary"><i
                             class="fa fa-fw fa-edit"></i></a>
-                    <form th:action="@{/admin/status/delete} + '/' + ${status.getId()}" method="POST"
+                    <form th:action="@{/admin/group/delete} + '/' + ${group.getId()}" method="POST"
                           class="d-inline-block">
                         <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-fw fa-times"></i></button>
                     </form>
