@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/admin/status")
-public class StatusController {
+public class StatusAdminController {
 
     @Autowired
     private StatusService statusService;

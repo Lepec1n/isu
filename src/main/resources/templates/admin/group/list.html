@@ -10,7 +10,7 @@
         <a class="btn btn-primary" th:href="@{/admin/group/create}"><i class="fa fa-plus"></i> Создать</a>
     </p>
     <div class="alert alert-warning" th:if="${groups.size() == 0}">
-        Еще не создано ни одного статуса пользователя
+        Еще не создано ни одной группы пользователя
     </div>
     <table class="table table-striped" th:unless="${groups.size() == 0}">
         <thead>

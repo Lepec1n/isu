@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/admin/literature")
-public class LiteratureController {
+public class LiteratureAdminController {
 
     @Autowired
     private ILiteratureService literatureService;

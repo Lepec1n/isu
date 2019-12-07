@@ -11,7 +11,7 @@ public interface IUserService {
 
     User saveStudent(User user);
 
-    List<User> findAllUsers();
+    List<User> findAll();
 
     User findUserById(Long id);
 

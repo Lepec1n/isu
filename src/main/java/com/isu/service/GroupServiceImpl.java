@@ -5,6 +5,7 @@ import com.isu.exception.GroupNotFoundException;
 import com.isu.model.Group;
 import com.isu.model.User;
 import com.isu.repository.GroupRepository;
+import com.isu.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,8 @@ public class GroupServiceImpl implements IGroupService{
 
     @Autowired
     GroupRepository groupRepository;
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     public List<User> getStudents(Long groupId) {
@@ -37,6 +40,7 @@ public class GroupServiceImpl implements IGroupService{
         return groupRepository.findAll();
     }
 
+    @Override
     public Group findGroup(Long id){
         Optional<Group> dbGroupContainer = groupRepository.findById(id);
         if(!dbGroupContainer.isPresent())
@@ -45,33 +49,35 @@ public class GroupServiceImpl implements IGroupService{
     }
 
     @Override
-    public Group findGroupByName(String name) {
+    public Group findGroup(String name) {
         return groupRepository.findGroupByName(name);
     }
 
     @Override
-    public Group createGroup(String name) {
-        Group group = new Group();
-        group.setName(name);
+    public Group create(Group group) {
         groupRepository.save(group);
         return group;
     }
 
     @Override
-    public Group updateGroup(Group group) {
-
+    public Group update(Group group) {
         Group dbGroup = findGroup(group.getId());
         dbGroup.setName(group.getName());
-        dbGroup.setStudents(group.getStudents());
-        groupRepository.save(dbGroup);
+        List<User> students = dbGroup.getStudents();
+        students.clear();
+        students.addAll(group.getStudents());
+        groupRepository.save(group);
         return dbGroup;
     }
 
     @Override
-    public void deleteGroup(Group group) {
-        Optional<Group> dbGroupContainer = groupRepository.findById(group.getId());
-        if(!dbGroupContainer.isPresent())
-            throw new GroupNotFoundException(group.getId());
-        groupRepository.delete(dbGroupContainer.get());
+    public void delete(Long groupId) {
+        Group dbGroup = findGroup(groupId);
+        delete(dbGroup);
+    }
+
+    @Override
+    public void delete(Group group){
+        groupRepository.delete(group);
     }
 }

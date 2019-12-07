@@ -39,5 +39,5 @@ public class GroupController {
         return modelAndView;
     }
 
-    
+
 }

@@ -5,7 +5,7 @@
 </head>
 <body>
 <div class="col-10" layout:fragment="content">
-    <h1>Редактирование статуса</h1>
+    <h1>Редактирование группы</h1>
     <form method="POST" th:object="${group}" th:action="@{/admin/group/edit} + '/' + ${group.getId()}">
         <div class="form-group">
             <label th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
@@ -23,7 +23,7 @@
             <label th:if="${#fields.hasErrors('students')}" th:errors="*{students}"
                    class="validation-message"></label>
             <select multiple class="form-control" id="exampleFormControlSelect2" th:field="*{students}">
-                <option th:each="student: ${students}" th:value="${student.getId()}" th:text="${student.getUsername()}"></option>
+                <option th:each="user: ${users}" th:value="${user.getId()}" th:text="${user.getUsername()}"></option>
             </select>
         </div>
         <div class="mt-3">

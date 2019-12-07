@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/admin/discipline")
-public class DisciplineController {
+public class DisciplineAdminController {
 
     @Autowired
     private IDisciplineService disciplineService;
