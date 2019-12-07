@@ -1,4 +1,4 @@
-package com.isu.controller;
+package com.isu.controller.admin;
 
 import com.isu.model.Discipline;
 import com.isu.service.IDisciplineService;

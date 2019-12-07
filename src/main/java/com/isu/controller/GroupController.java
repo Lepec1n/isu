@@ -38,4 +38,6 @@ public class GroupController {
         modelAndView.setViewName("group");
         return modelAndView;
     }
+
+    
 }

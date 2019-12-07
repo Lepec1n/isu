@@ -1,4 +1,4 @@
-package com.isu.controller;
+package com.isu.controller.admin;
 
 import com.isu.exception.StatusNotFoundException;
 import com.isu.model.Status;
