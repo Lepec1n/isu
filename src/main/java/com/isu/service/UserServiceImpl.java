@@ -38,6 +38,7 @@ public class UserServiceImpl implements IUserService{
     @Override
     public User saveStudent(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setActive(1);
         Role userRole = roleRepository.findByName(Role.STUDENT);
         user.setRoles(new HashSet<>(Arrays.asList(userRole)));
         userRepository.save(user);

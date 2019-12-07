@@ -36,6 +36,8 @@ public class User {
     @NotEmpty(message = "*Пожалуйста, введите вашу фамилию")
     private String lastName;
 
+    private int active;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
