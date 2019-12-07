@@ -37,6 +37,13 @@ public class GroupServiceImpl implements IGroupService{
         return groupRepository.findAll();
     }
 
+    public Group findGroup(Long id){
+        Optional<Group> dbGroupContainer = groupRepository.findById(id);
+        if(!dbGroupContainer.isPresent())
+            throw new GroupNotFoundException(id);
+        return dbGroupContainer.get();
+    }
+
     @Override
     public Group findGroupByName(String name) {
         return groupRepository.findGroupByName(name);
@@ -52,10 +59,8 @@ public class GroupServiceImpl implements IGroupService{
 
     @Override
     public Group updateGroup(Group group) {
-        Optional<Group> dbGroupContainer = groupRepository.findById(group.getId());
-        if(!dbGroupContainer.isPresent())
-            throw new GroupNotFoundException(group.getId());
-        Group dbGroup = dbGroupContainer.get();
+
+        Group dbGroup = findGroup(group.getId());
         dbGroup.setName(group.getName());
         dbGroup.setStudents(group.getStudents());
         groupRepository.save(dbGroup);
