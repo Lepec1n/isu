@@ -68,28 +68,25 @@ public class LiteratureServiceImpl implements ILiteratureService {
     }
 
     @Override
-    public Literature addLiterature(String name, String preview) {
-        Literature literature = new Literature();
-        literature.setName(name);
-        literature.setPreview(preview);
+    public Literature create(Literature literature) {
         literatureRepository.save(literature);
         return literature;
     }
 
     @Override
-    public void removeLiterature(String name) {
-        Literature literature = literatureRepository.findLiteratureByName(name);
-        removeLiterature(literature);
+    public void delete(Long id) {
+        Literature literature = findLiterature(id);
+        delete(literature);
     }
 
     @Override
-    public void removeLiterature(Literature literature) {
+    public void delete(Literature literature) {
         if(!literature.getGivenOut())
             literatureRepository.delete(literature);
     }
 
     @Override
-    public Literature updateLiterature(Literature literature) {
+    public Literature update(Literature literature) {
         Literature dbLiterature = findLiterature(literature.getId());
         dbLiterature.setPreview(literature.getPreview());
         dbLiterature.setName(literature.getName());

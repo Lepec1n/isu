@@ -20,11 +20,11 @@ public interface ILiteratureService {
 
     Boolean processRequest(Long literatureRequestId);
 
-    Literature addLiterature(String name, String preview);
+    Literature create(Literature literature);
 
-    void removeLiterature(String name);
+    void delete(Long id);
 
-    void removeLiterature(Literature literature);
+    void delete(Literature literature);
 
-    Literature updateLiterature(Literature literature);
+    Literature update(Literature literature);
 }
