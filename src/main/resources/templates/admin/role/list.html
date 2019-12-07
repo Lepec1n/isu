@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout.html}">
 <head>
-    <title>Список дисциплин</title>
+    <title>Список ролей</title>
 </head>
 <body>
 <div class="col-10" layout:fragment="content">
-    <h1>Дисциплины</h1>
+    <h1>Роли</h1>
     <p>
-        <a class="btn btn-primary" th:href="@{/admin/discipline/create}"><i class="fa fa-plus"></i> Создать</a>
+        <a class="btn btn-primary" th:href="@{/admin/role/create}"><i class="fa fa-plus"></i> Создать</a>
     </p>
-    <div class="alert alert-warning" th:if="${disciplines.size() == 0}">
-        Еще не создано ни одной дисципилны
+    <div class="alert alert-warning" th:if="${roles.size() == 0}">
+        Еще не создано ни одной роли
     </div>
-    <table class="table table-striped" th:unless="${disciplines.size() == 0}">
+    <table class="table table-striped" th:unless="${roles.size() == 0}">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -22,15 +22,15 @@
         </tr>
         </thead>
         <tbody>
-        <th:block th:each="discipline, iter : ${disciplines}">
+        <th:block th:each="role, iter : ${roles}">
             <tr>
                 <th scope="row" th:text="${iter.index + 1}"></th>
-                <td th:text="${discipline.getId()}"></td>
-                <td th:text="${discipline.getName()}"></td>
+                <td th:text="${role.getId()}"></td>
+                <td th:text="${role.getName()}"></td>
                 <td>
-                    <a th:href="@{/admin/discipline/edit} + '/' + ${discipline.getId()}" class="btn btn-sm btn-primary"><i
+                    <a th:href="@{/admin/role/edit} + '/' + ${role.getId()}" class="btn btn-sm btn-primary"><i
                             class="fa fa-fw fa-edit"></i></a>
-                    <form th:action="@{/admin/discipline/delete} + '/' + ${discipline.getId()}" method="POST"
+                    <form th:action="@{/admin/role/delete} + '/' + ${role.getId()}" method="POST"
                           class="d-inline-block">
                         <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-fw fa-times"></i></button>
                     </form>

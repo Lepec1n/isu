@@ -10,7 +10,7 @@
         <a class="btn btn-primary" th:href="@{/admin/literature/create}"><i class="fa fa-plus"></i> Создать</a>
     </p>
     <div class="alert alert-warning" th:if="${literatures.size() == 0}">
-        Еще не создано ни одного статуса пользователя
+        Еще не создано ни одной литературы
     </div>
     <table class="table table-striped" th:unless="${literatures.size() == 0}">
         <thead>
