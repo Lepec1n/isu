@@ -63,14 +63,17 @@ public class GroupServiceImpl implements IGroupService{
     public Group update(Group group) {
         Group dbGroup = findGroup(group.getId());
         dbGroup.setName(group.getName());
-        List<User> students = dbGroup.getStudents();
-        students.clear();
-        students.addAll(group.getStudents());
-        groupRepository.save(group);
+        List<User> removed = dbGroup.getStudents();
+        removed.removeAll(group.getStudents());
+        groupRepository.save(dbGroup);
         group.getStudents().stream().forEach(user -> {
             user.setGroup(dbGroup);
             userRepository.save(user);
         });
+        removed.stream().forEach( user -> {
+                    user.setGroup(null);
+                    userRepository.save(user);
+                });
 
         return dbGroup;
     }

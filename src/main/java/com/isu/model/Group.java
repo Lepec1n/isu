@@ -3,6 +3,7 @@ package com.isu.model;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,7 +24,16 @@ public class Group {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,orphanRemoval = true,
+            fetch = FetchType.LAZY,
             mappedBy = "group")
     private List<User> students;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "faculty_id")
+    private Faculty faculty;
+
+    @Override
+    public String toString(){
+        return id.toString() + " " + name + " " + faculty.toString();
+    }
 }

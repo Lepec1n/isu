@@ -66,4 +66,9 @@ public class User {
     @JoinColumn(name = "parent_id")
     private User inviter;
 
+    @Override
+    public String toString(){
+        return username.toString() + " " + id;
+    }
+
 }
