@@ -1,8 +1,6 @@
-package com.isu.controller;
+package com.isu.controller.admin;
 
-import com.isu.model.Discipline;
 import com.isu.model.Literature;
-import com.isu.service.IDisciplineService;
 import com.isu.service.ILiteratureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
