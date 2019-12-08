@@ -25,7 +25,8 @@ public class MarksController {
         User user = userService.findUserById(userId);
 
         modelAndView.addObject("marks", user.getMarks());
-        modelAndView.setViewName("marks/{userId}");
+        modelAndView.addObject("user", user);
+        modelAndView.setViewName("private/marks/detail");
         return modelAndView;
     }
 }

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout_private.html}">
 <head>
-    <title>Оценки</title>
+    <title th:text="'Оценки ' + ${user.getUsername()}"></title>
 </head>
 <body>
 <div class="col-10" th:unless="${marks == null}" layout:fragment="content">
-    <h1>Оценки</h1>
+    <h1 th:text="'Оценки ' + ${user.getUsername()}"></h1>
     <div class="alert alert-warning" th:if="${marks == null || marks.size() == 0}">
         К сожалению, не удалось найти оценки
     </div>
