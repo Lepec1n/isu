@@ -16,14 +16,14 @@
         <div class="form-group">
             <label th:if="${#fields.hasErrors('discipline')}" th:errors="*{discipline}"
             class="validation-message"></label>
-            <select multiple class="form-control" id="exampleFormControlSelect2" th:field="*{discipline}">
+            <select class="form-control" id="exampleFormControlSelect2" th:field="*{discipline}">
                 <option th:each="discipline: ${disciplines}" th:value="${discipline.getId()}" th:text="${discipline.getName()}"></option>
             </select>
         </div>
         <div class="form-group">
             <label th:if="${#fields.hasErrors('user')}" th:errors="*{user}"
                    class="validation-message"></label>
-            <select multiple class="form-control" id="exampleFormControlSelect2" th:field="*{user}">
+            <select class="form-control" id="exampleFormControlSelect2" th:field="*{user}">
                 <option th:each="user: ${users}" th:value="${user.getId()}" th:text="${user.getUsername()}"></option>
             </select>
         </div>
