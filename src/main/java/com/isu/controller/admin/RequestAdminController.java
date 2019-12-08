@@ -1,10 +1,9 @@
 package com.isu.controller.admin;
 
-import com.isu.model.Faculty;
 import com.isu.model.LiteratureRequest;
-import com.isu.service.ILiteratureRequestService;
-import com.isu.service.ILiteratureService;
-import com.isu.service.IUserService;
+import com.isu.service.interfaces.ILiteratureRequestService;
+import com.isu.service.interfaces.ILiteratureService;
+import com.isu.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

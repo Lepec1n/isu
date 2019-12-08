@@ -4,6 +4,7 @@ package com.isu.service;
 import com.isu.exception.RequestNotFoundException;
 import com.isu.model.LiteratureRequest;
 import com.isu.repository.LiteratureRequestRepository;
+import com.isu.service.interfaces.ILiteratureRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class LiteratureRequestServiceImpl implements ILiteratureRequestService{
+public class LiteratureRequestServiceImpl implements ILiteratureRequestService {
 
 
     @Autowired

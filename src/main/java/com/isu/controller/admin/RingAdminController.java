@@ -1,9 +1,8 @@
 package com.isu.controller.admin;
 
-import com.isu.model.Discipline;
 import com.isu.model.Ring;
-import com.isu.service.IRingService;
-import com.isu.service.IUserService;
+import com.isu.service.interfaces.IRingService;
+import com.isu.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

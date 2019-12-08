@@ -7,6 +7,7 @@ import com.isu.model.LiteratureRequest;
 import com.isu.model.User;
 import com.isu.repository.LiteratureRepository;
 import com.isu.repository.LiteratureRequestRepository;
+import com.isu.service.interfaces.ILiteratureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

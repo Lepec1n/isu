@@ -1,9 +1,8 @@
-package com.isu.service;
+package com.isu.service.interfaces;
 
 import com.isu.model.Status;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface IStatusService {
     List<Status> getStatuses();

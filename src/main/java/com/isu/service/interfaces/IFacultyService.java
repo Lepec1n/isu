@@ -1,7 +1,6 @@
-package com.isu.service;
+package com.isu.service.interfaces;
 
 import com.isu.model.Faculty;
-import com.isu.model.Ring;
 
 import java.util.List;
 

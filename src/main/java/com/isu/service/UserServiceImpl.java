@@ -5,6 +5,7 @@ import com.isu.model.Role;
 import com.isu.model.User;
 import com.isu.repository.RoleRepository;
 import com.isu.repository.UserRepository;
+import com.isu.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service("userService")
-public class UserServiceImpl implements IUserService{
+public class UserServiceImpl implements IUserService {
 
     private UserRepository userRepository;
     private RoleRepository roleRepository;

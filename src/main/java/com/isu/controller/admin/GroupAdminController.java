@@ -1,11 +1,9 @@
 package com.isu.controller.admin;
 
-import com.isu.model.Discipline;
 import com.isu.model.Group;
-import com.isu.model.User;
-import com.isu.service.IDisciplineService;
-import com.isu.service.IGroupService;
-import com.isu.service.IUserService;
+import com.isu.service.interfaces.IFacultyService;
+import com.isu.service.interfaces.IGroupService;
+import com.isu.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +22,8 @@ public class GroupAdminController {
     private IGroupService groupService;
     @Autowired
     private IUserService userService;
+    @Autowired
+    private IFacultyService facultyService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView list() {
@@ -41,6 +41,7 @@ public class GroupAdminController {
         Group group = new Group();
 
         modelAndView.addObject("group", group);
+        modelAndView.addObject("faculties", facultyService.findAll());
         modelAndView.setViewName("admin/group/create");
         return modelAndView;
     }
@@ -57,9 +58,8 @@ public class GroupAdminController {
         ModelAndView modelAndView = new ModelAndView();
 
         Group group = groupService.findGroup(groupId);
-        List<User> users = userService.findAll();
         modelAndView.addObject("group", group);
-        modelAndView.addObject("users", users);
+        modelAndView.addObject("users", userService.findAll());
         modelAndView.setViewName("admin/group/edit");
         return modelAndView;
     }

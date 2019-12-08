@@ -1,7 +1,7 @@
 package com.isu.controller.admin;
 
 import com.isu.model.Literature;
-import com.isu.service.ILiteratureService;
+import com.isu.service.interfaces.ILiteratureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

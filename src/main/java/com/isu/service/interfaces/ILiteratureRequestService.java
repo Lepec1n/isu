@@ -1,6 +1,5 @@
-package com.isu.service;
+package com.isu.service.interfaces;
 
-import com.isu.model.Discipline;
 import com.isu.model.LiteratureRequest;
 
 import java.util.List;

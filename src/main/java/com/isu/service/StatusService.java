@@ -4,6 +4,7 @@ package com.isu.service;
 import com.isu.exception.StatusNotFoundException;
 import com.isu.model.Status;
 import com.isu.repository.StatusRepository;
+import com.isu.service.interfaces.IStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

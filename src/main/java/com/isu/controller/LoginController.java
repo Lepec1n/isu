@@ -3,7 +3,7 @@ package com.isu.controller;
 import javax.validation.Valid;
 
 import com.isu.model.User;
-import com.isu.service.IUserService;
+import com.isu.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

@@ -2,6 +2,7 @@ package com.isu.service;
 
 import com.isu.model.Faculty;
 import com.isu.repository.FacultyRepository;
+import com.isu.service.interfaces.IFacultyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import java.util.Optional;
 
 
 @Service
-public class FacultyServiceImpl implements IFacultyService{
+public class FacultyServiceImpl implements IFacultyService {
 
     @Autowired
     FacultyRepository facultyRepository;

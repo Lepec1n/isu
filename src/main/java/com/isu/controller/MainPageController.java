@@ -1,7 +1,7 @@
 package com.isu.controller;
 
 import com.isu.model.User;
-import com.isu.service.IUserService;
+import com.isu.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

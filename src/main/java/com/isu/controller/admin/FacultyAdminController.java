@@ -1,8 +1,7 @@
 package com.isu.controller.admin;
 
 import com.isu.model.Faculty;
-import com.isu.model.Ring;
-import com.isu.service.IFacultyService;
+import com.isu.service.interfaces.IFacultyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin/ring")
+@RequestMapping("/admin/faculty")
 public class FacultyAdminController {
 
     @Autowired

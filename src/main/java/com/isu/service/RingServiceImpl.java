@@ -3,6 +3,7 @@ package com.isu.service;
 import com.isu.exception.RingNotFoundException;
 import com.isu.model.Ring;
 import com.isu.repository.RingRepository;
+import com.isu.service.interfaces.IRingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class RingServiceImpl implements IRingService{
+public class RingServiceImpl implements IRingService {
 
     @Autowired
     RingRepository ringRepository;

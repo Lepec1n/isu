@@ -4,6 +4,7 @@ import com.isu.exception.DisciplineNameNotFoundException;
 import com.isu.exception.DisciplineNotFoundException;
 import com.isu.model.Discipline;
 import com.isu.repository.DisciplineRepository;
+import com.isu.service.interfaces.IDisciplineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DisciplineServiceImpl implements IDisciplineService{
+public class DisciplineServiceImpl implements IDisciplineService {
 
     @Autowired
     DisciplineRepository disciplineRepository;

@@ -6,6 +6,7 @@ import com.isu.model.Group;
 import com.isu.model.User;
 import com.isu.repository.GroupRepository;
 import com.isu.repository.UserRepository;
+import com.isu.service.interfaces.IGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class GroupServiceImpl implements IGroupService{
+public class GroupServiceImpl implements IGroupService {
 
     @Autowired
     GroupRepository groupRepository;

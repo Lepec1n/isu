@@ -1,4 +1,4 @@
-package com.isu.service;
+package com.isu.service.interfaces;
 
 import com.isu.model.Ring;
 
