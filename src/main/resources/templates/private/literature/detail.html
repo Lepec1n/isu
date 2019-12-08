@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout_private.html}">
+<head>
+    <title th:text="Магические труды - ${literature.getName()}"></title>
+</head>
+<body>
+<div class="col-10" layout:fragment="content">
+    <h1 th:text="${literature.getName()}"></h1>
+    <p th:text="${literature.getPreview()}"></p>
+</div>
+</body>
+</html>
