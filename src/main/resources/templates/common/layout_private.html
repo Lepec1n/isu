@@ -27,12 +27,8 @@
     <div class="row">
         <div class="col-2">
             <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="/isu/">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/isu/literature/">Магические труды</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/my_group}">Моя группа</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/my_marks/}">Мои оценки</a></li>
             </ul>
         </div>
         <div class="col-10" layout:fragment="content">Page Content</div>
