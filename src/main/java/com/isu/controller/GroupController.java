@@ -35,7 +35,7 @@ public class GroupController {
         }
         modelAndView.addObject("group", group);
         modelAndView.addObject("students", students);
-        modelAndView.setViewName("private/group");
+        modelAndView.setViewName("private/group/detail");
         return modelAndView;
     }
 
