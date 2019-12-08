@@ -14,8 +14,16 @@
 <body>
 
 <div th:insert="~{common/header :: student}"></div>
-
 <div class="container-fluid">
+    <div class="row" th:unless="${notifications == null || notifications.size() == 0}">
+        <div class="col-12">
+            <div class="alert alert-primary">
+                <ul>
+                    <li th:each="notification: ${notifications}" th:text="notification"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-2">
             <ul class="nav flex-column">
