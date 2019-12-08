@@ -66,6 +66,10 @@ public class User {
     @JoinColumn(name = "parent_id")
     private User inviter;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ring_id")
+    private Ring ring;
+
     @Override
     public String toString(){
         return username.toString() + " " + id;
