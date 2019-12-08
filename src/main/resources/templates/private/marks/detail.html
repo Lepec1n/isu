@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout_private.html}">
+<head>
+    <title>Оценки</title>
+</head>
+<body>
+<div class="col-10" th:unless="${marks == null}" layout:fragment="content">
+    <h1>Оценки</h1>
+    <div class="alert alert-warning" th:if="${marks == null || marks.size() == 0}">
+        К сожалению, не удалось найти оценки
+    </div>
+    <table class="table table-striped" th:unless="${marks == null || marks.size() == 0}">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Дисциплина</th>
+            <th scope="col">Оценка</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="mark, iter : ${marks}">
+            <tr>
+                <th scope="row" th:text="${iter.index + 1}"></th>
+                <td th:text="${mark.getDiscipline().getName()}"></td>
+                <td th:text="${mark.getMark()}"></td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
