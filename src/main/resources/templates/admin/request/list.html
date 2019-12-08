@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout.html}">
+<head>
+    <title>Список запросов литературы</title>
+</head>
+<body>
+<div class="col-10" layout:fragment="content">
+    <h1>Запросы литературы</h1>
+    <p>
+        <a class="btn btn-primary" th:href="@{/admin/request/create}"><i class="fa fa-plus"></i> Создать</a>
+    </p>
+    <div class="alert alert-warning" th:if="${requests.size() == 0}">
+        Еще не создано ни одного запроса литературы
+    </div>
+    <table class="table table-striped" th:unless="${requests.size() == 0}">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Литература</th>
+            <th scope="col">Пользователь</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="request, iter : ${requests}">
+            <tr>
+                <th scope="row" th:text="${iter.index + 1}"></th>
+                <td th:text="${request.getId()}"></td>
+                <td th:text="${request.getLiterature().getName()}"></td>
+                <td th:text="${request.getUser().getUsername()}"></td>
+                <td>
+                    <a th:href="@{/admin/request/edit} + '/' + ${request.getId()}" class="btn btn-sm btn-primary"><i
+                            class="fa fa-fw fa-edit"></i></a>
+                    <form th:action="@{/admin/request/delete} + '/' + ${request.getId()}" method="POST"
+                          class="d-inline-block">
+                        <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-fw fa-times"></i></button>
+                    </form>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
