@@ -2,7 +2,9 @@ package com.isu.controller.admin;
 
 import com.isu.model.Discipline;
 import com.isu.model.Mark;
+import com.isu.service.interfaces.IDisciplineService;
 import com.isu.service.interfaces.IMarkService;
+import com.isu.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +21,10 @@ public class MarkAdminController {
 
     @Autowired
     private IMarkService markService;
+    @Autowired
+    private IDisciplineService disciplineService;
+    @Autowired
+    private IUserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView list() {
@@ -36,6 +42,8 @@ public class MarkAdminController {
         Mark mark = new Mark();
 
         modelAndView.addObject("mark", mark);
+        modelAndView.addObject("users", userService.findAll());
+        modelAndView.addObject("disciplines", disciplineService.findAll());
         modelAndView.setViewName("admin/mark/create");
         return modelAndView;
     }
@@ -54,6 +62,8 @@ public class MarkAdminController {
         Mark mark = markService.findById(markId);
 
         modelAndView.addObject("mark", mark);
+        modelAndView.addObject("users", userService.findAll());
+        modelAndView.addObject("disciplines", disciplineService.findAll());
         modelAndView.setViewName("admin/mark/edit");
         return modelAndView;
     }
