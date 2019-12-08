@@ -69,7 +69,7 @@ public class FacultyAdminController {
     @RequestMapping(value = "/delete/{facultyId}", method = RequestMethod.POST)
     public ModelAndView edit(@PathVariable("facultyId") long facultyId) {
         facultyService.delete(facultyId);
-        return new ModelAndView("redirect:/admin/ring/");
+        return new ModelAndView("redirect:/admin/faculty/");
     }
 
 }
