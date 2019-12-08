@@ -52,6 +52,37 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public User findById(Long userId) {
+        Optional<User> dbUserContainer = userRepository.findById(userId);
+        if(!dbUserContainer.isPresent())
+            throw new UserNotFoundException(userId);
+        return dbUserContainer.get();
+    }
+
+    @Override
+    public User create(User user) {
+        userRepository.save(user);
+        return user;
+    }
+
+    @Override
+    public User update(User user) {
+        userRepository.save(user);
+        return user;
+    }
+
+    @Override
+    public void delete(User user) {
+        userRepository.delete(user);
+    }
+
+    @Override
+    public void delete(Long userId) {
+        User dbUser = findUserById(userId);
+        delete(dbUser);
+    }
+
+    @Override
     public User findUserById(Long id) {
         Optional<User> dbUserContainer = userRepository.findById(id);
         if(!dbUserContainer.isPresent()){

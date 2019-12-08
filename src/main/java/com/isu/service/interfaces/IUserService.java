@@ -13,6 +13,16 @@ public interface IUserService {
 
     List<User> findAll();
 
+    User findById(Long userId);
+
+    User create(User user);
+
+    User update(User user);
+
+    void delete(User user);
+
+    void delete(Long userId);
+
     User findUserById(Long id);
 
     List<User> finAllUsersByRole(Role role);
