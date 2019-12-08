@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout.html}">
+<head>
+    <title>Список пользователей</title>
+</head>
+<body>
+<div class="col-10" layout:fragment="content">
+    <h1>Статусы</h1>
+    <p>
+        <a class="btn btn-primary" th:href="@{/admin/user/create}"><i class="fa fa-plus"></i> Создать</a>
+    </p>
+    <div class="alert alert-warning" th:if="${users.size() == 0}">
+        Еще не создано ни одного пользователя
+    </div>
+    <table class="table table-striped" th:unless="${users.size() == 0}">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Имя пользователя</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="user, iter : ${users}">
+            <tr>
+                <th scope="row" th:text="${iter.index + 1}"></th>
+                <td th:text="${user.getId()}"></td>
+                <td th:text="${user.getUsername()}"></td>
+                <td th:text="${user.getName()}"></td>
+                <td th:text="${user.getLastName()}"></td>
+                <td th:text="${user.getStatus()}"></td>
+                <td>
+                    <a th:href="@{/admin/user/edit} + '/' + ${user.getId()}" class="btn btn-sm btn-primary"><i
+                            class="fa fa-fw fa-edit"></i></a>
+                    <form th:action="@{/admin/user/delete} + '/' + ${user.getId()}" method="POST"
+                          class="d-inline-block">
+                        <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-fw fa-times"></i></button>
+                    </form>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
