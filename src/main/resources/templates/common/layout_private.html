@@ -20,40 +20,14 @@
         <div class="col-2">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Главная</a>
+                    <a class="nav-link" href="/isu/">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/isu/literature/">Магические труды</a>
                 </li>
             </ul>
         </div>
-        <div class="col-10" th:if="${group == null}">
-            <div class="alert alert-warning">
-                Извините, но такой группы не существует
-            </div>
-        </div>
-        <div class="col-10" th:unless="${group == null}">
-            <h1 th:text="'Группа ' + ${group.getName()}">Группа</h1>
-            <div class="alert alert-warning" th:if="${students == null || students.size() == 0}">
-                К сожалению, в данной группе нет студентов
-            </div>
-            <table class="table table-striped" th:unless="${students == null || students.size() == 0}">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Status</th>
-                </tr>
-                </thead>
-                <tbody>
-                <th:block th:each="student, iter : ${students}">
-                    <tr>
-                        <th scope="row" th:text="${iter.index + 1}"></th>
-                        <td th:text="${student.getName()} + ' ' + ${student.getLastName()}">Mark</td>
-                        <td th:if="${student.getStatus() != null}" th:text="${student.getStatus().getName()}"></td>
-                        <td th:unless="${student.getStatus() != null}" th:text="Неизвестно"></td>
-                    </tr>
-                </th:block>
-                </tbody>
-            </table>
-        </div>
+        <div class="col-10" layout:fragment="content">Page Content</div>
     </div>
 </div>
 
