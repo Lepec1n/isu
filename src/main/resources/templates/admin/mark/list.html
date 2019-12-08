@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout.html}">
+<head>
+    <title>Список оценок</title>
+</head>
+<body>
+<div class="col-10" layout:fragment="content">
+    <h1>Оценки</h1>
+    <p>
+        <a class="btn btn-primary" th:href="@{/admin/mark/create}"><i class="fa fa-plus"></i> Создать</a>
+    </p>
+    <div class="alert alert-warning" th:if="${marks.size() == 0}">
+        Еще не создано ни одной оценки
+    </div>
+    <table class="table table-striped" th:unless="${marks.size() == 0}">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Дисциплина</th>
+            <th scope="col">Пользователь</th>
+            <th scope="col">Оценка</th>
+            <th scope="col">Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="mark, iter : ${marks}">
+            <tr>
+                <th scope="row" th:text="${iter.index + 1}"></th>
+                <td th:text="${mark.getId()}"></td>
+                <td th:text="${mark.getDiscipine().getName()}"></td>
+                <td th:text="${mark.getUser().getUsername()}"></td>
+                <td th:text="${mark.getMark()}"></td>
+                <td>
+                    <a th:href="@{/admin/mark/edit} + '/' + ${mark.getId()}" class="btn btn-sm btn-primary"><i
+                            class="fa fa-fw fa-edit"></i></a>
+                    <form th:action="@{/admin/mark/delete} + '/' + ${mark.getId()}" method="POST"
+                          class="d-inline-block">
+                        <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-fw fa-times"></i></button>
+                    </form>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
