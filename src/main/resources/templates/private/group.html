@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout_private.html}">
+<head>
+    <title></title>
+</head>
+<body>
+<div class="col-10" th:unless="${group == null}" layout:fragment="content">
+    <h1 th:text="'Группа ' + ${group.getName()}">Группа</h1>
+    <div class="alert alert-warning" th:if="${students == null || students.size() == 0}">
+        К сожалению, в данной группе нет студентов
+    </div>
+    <table class="table table-striped" th:unless="${students == null || students.size() == 0}">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="student, iter : ${students}">
+            <tr>
+                <th scope="row" th:text="${iter.index + 1}"></th>
+                <td th:text="${student.getName()} + ' ' + ${student.getLastName()}">Mark</td>
+                <td th:if="${student.getStatus() != null}" th:text="${student.getStatus().getName()}"></td>
+                <td th:unless="${student.getStatus() != null}" th:text="Неизвестно"></td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
