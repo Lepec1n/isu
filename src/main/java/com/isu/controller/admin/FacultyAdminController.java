@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin/ring")
+@RequestMapping("/admin/faculty")
 public class FacultyAdminController {
 
     @Autowired
