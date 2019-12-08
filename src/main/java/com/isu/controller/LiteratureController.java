@@ -24,18 +24,18 @@ public class LiteratureController {
         ModelAndView modelAndView = new ModelAndView();
         List<Literature> books = literatureService.findAll();
 
-        modelAndView.addObject("literatures", books);
-        modelAndView.setViewName("/literature/list");
+        modelAndView.addObject("literature", books);
+        modelAndView.setViewName("private/literature/list");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/literature/{literatureId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{literatureId}", method = RequestMethod.GET)
     public ModelAndView get(@PathVariable("literatureId") long liteartureId) {
         ModelAndView modelAndView = new ModelAndView();
         Literature literature = literatureService.findLiterature(liteartureId);
 
         modelAndView.addObject("literature", literature);
-        modelAndView.setViewName("literature/{literatureId}");
+        modelAndView.setViewName("private/literature/detail");
         return modelAndView;
     }
 }

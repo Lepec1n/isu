@@ -21,10 +21,10 @@
         <th:block th:each="paper, iter : ${literature}">
             <tr>
                 <th scope="row" th:text="${iter.index + 1}"></th>
-                <td th:text="${paper.getName()}"></td>
+                <td><a th:href="@{/literature/} + ${paper.getId()}" th:text="${paper.getName()}"></a> </td>
                 <td>
                     <!-- TODO обработчик заявки -->
-                    <a th:href="#" class="btn btn-sm btn-primary" th:unless="${literature.getGivenOut == true}">
+                    <a href="#" class="btn btn-sm btn-primary" th:unless="${paper.getGivenOut() == true}">
                         Оставить заявку
                     </a>
                 </td>

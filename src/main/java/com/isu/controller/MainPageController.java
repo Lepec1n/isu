@@ -22,7 +22,7 @@ public class MainPageController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByUsername(auth.getName());
         modelAndView.addObject("welcomeMessage", "Добро пожаловать, " + user.getName() + " " + user.getLastName() + " (" + user.getUsername() + ")");
-        modelAndView.setViewName("index");
+        modelAndView.setViewName("private/index");
         return modelAndView;
     }
 }
