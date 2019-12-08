@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout_private.html}">
+<head>
+    <title th:text="Пользователь - ${user.getUsername()}"></title>
+</head>
+<body>
+<div class="col-10" layout:fragment="content">
+    <h1 th:text="${user.getUsername()}"></h1>
+    <dl>
+        <dt>Имя</dt>
+        <dd th:text="${user.getName()}"></dd>
+    </dl>
+    <dl>
+        <dt>Фамилия</dt>
+        <dd th:text="${user.getLastName()}"></dd>
+    </dl>
+    <dl>
+        <dt>Группа</dt>
+        <dd th:text="${user.getGroup().getName()}"></dd>
+    </dl>
+    <dl>
+        <dt>Статус</dt>
+        <dd th:text="${user.getStatus().getName()}"></dd>
+    </dl>
+    <dl>
+        <dt>Кольцо</dt>
+        <dd th:text="${user.getRing().getId()}"></dd>
+    </dl>
+</div>
+</body>
+</html>
