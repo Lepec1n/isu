@@ -96,4 +96,16 @@ public class UserServiceImpl implements IUserService {
         return null;
     }
 
+    @Override
+    public List<User> findAllStudents() {
+        Role studentRole = roleRepository.findByName(Role.STUDENT);
+        return userRepository.findAllByRoles(studentRole);
+    }
+
+    @Override
+    public List<User> findAllTeachers() {
+        Role mageRole = roleRepository.findByName(Role.MAGE);
+        return userRepository.findAllByRoles(mageRole);
+    }
+
 }

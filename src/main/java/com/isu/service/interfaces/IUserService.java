@@ -26,4 +26,8 @@ public interface IUserService {
     User findUserById(Long id);
 
     List<User> finAllUsersByRole(Role role);
+
+    List<User> findAllStudents();
+
+    List<User> findAllTeachers();
 }

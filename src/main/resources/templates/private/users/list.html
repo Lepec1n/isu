@@ -21,7 +21,7 @@
             <tr>
                 <th scope="row" th:text="${iter.index + 1}"></th>
                 <td>
-                    <a href="@{/users} + '/' + ${user.getId()}" th:text="${user.getUsername()}"></a>
+                    <a th:href="@{/users} + '/' + ${user.getId()}" th:text="${user.getUsername()}"></a>
                 </td>
             </tr>
         </th:block>

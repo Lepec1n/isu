@@ -30,9 +30,9 @@ public class LiteratureController {
     }
 
     @RequestMapping(value = "/{literatureId}", method = RequestMethod.GET)
-    public ModelAndView get(@PathVariable("literatureId") long liteartureId) {
+    public ModelAndView get(@PathVariable("literatureId") long literatureId) {
         ModelAndView modelAndView = new ModelAndView();
-        Literature literature = literatureService.findLiterature(liteartureId);
+        Literature literature = literatureService.findLiterature(literatureId);
 
         modelAndView.addObject("literature", literature);
         modelAndView.setViewName("private/literature/detail");
