@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout_private.html}">
+<head>
+    <title>Магические труды</title>
+</head>
+<body>
+<div class="col-10" th:unless="${literature == null}" layout:fragment="content">
+    <h1>Магические труды</h1>
+    <div class="alert alert-warning" th:if="${literature == null || literature.size() == 0}">
+        К сожалению, не удалось найти магические труды
+    </div>
+    <table class="table table-striped" th:unless="${literature == null || literature.size() == 0}">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="paper, iter : ${literature}">
+            <tr>
+                <th scope="row" th:text="${iter.index + 1}"></th>
+                <td th:text="${paper.getName()}"></td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
