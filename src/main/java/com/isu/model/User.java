@@ -66,8 +66,8 @@ public class User {
     @JoinColumn(name = "parent_id")
     private User inviter;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ring_id")
+    @OneToOne(fetch = FetchType.LAZY,
+            mappedBy = "user")
     private Ring ring;
 
     @Override

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout_private.html}">
 <head>
-    <title th:text="Пользователь - ${user.getUsername()}"></title>
+    <title th:text="Пользователь + ${user.getUsername()}"></title>
 </head>
 <body>
 <div class="col-10" layout:fragment="content">

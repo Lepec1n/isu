@@ -41,7 +41,7 @@ public class UserController {
     public ModelAndView getTeachers(@PathVariable("userId") long userId) {
         ModelAndView modelAndView = new ModelAndView();
 
-        modelAndView.addObject("users", userService.findById(userId));
+        modelAndView.addObject("user", userService.findById(userId));
         modelAndView.setViewName("private/users/detail");
         return modelAndView;
     }
