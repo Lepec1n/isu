@@ -1,5 +1,6 @@
 package com.isu.service.interfaces;
 
+import com.isu.model.Ring;
 import com.isu.model.Role;
 import com.isu.model.User;
 
@@ -30,4 +31,6 @@ public interface IUserService {
     List<User> findAllStudents();
 
     List<User> findAllTeachers();
+
+    List<User> findByRing(Ring ring);
 }

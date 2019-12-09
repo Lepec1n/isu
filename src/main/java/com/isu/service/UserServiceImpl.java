@@ -1,6 +1,7 @@
 package com.isu.service;
 
 import com.isu.exception.UserNotFoundException;
+import com.isu.model.Ring;
 import com.isu.model.Role;
 import com.isu.model.User;
 import com.isu.repository.RoleRepository;
@@ -10,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service("userService")
 public class UserServiceImpl implements IUserService {
@@ -106,6 +104,17 @@ public class UserServiceImpl implements IUserService {
     public List<User> findAllTeachers() {
         Role mageRole = roleRepository.findByName(Role.MAGE);
         return userRepository.findAllByRoles(mageRole);
+    }
+
+    @Override
+    public List<User> findByRing(Ring ring) {
+        List<User> hierarchy= new ArrayList();
+        User lastUser = ring.getUser();
+        do{
+            hierarchy.add(lastUser);
+            lastUser = lastUser.getInviter();
+        }while(lastUser != null);
+        return hierarchy;
     }
 
 }
