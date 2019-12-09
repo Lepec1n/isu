@@ -3,6 +3,7 @@ package com.isu.controller.admin;
 import com.isu.model.Group;
 import com.isu.model.User;
 import com.isu.service.interfaces.IGroupService;
+import com.isu.service.interfaces.IStatusService;
 import com.isu.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,8 @@ public class UserAdminController {
 
     @Autowired
     private IUserService userService;
+    @Autowired
+    private IStatusService statusService;
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -38,6 +41,7 @@ public class UserAdminController {
         User user = new User();
 
         modelAndView.addObject("user", user);
+        modelAndView.addObject("statuses", statusService.getStatuses());
         modelAndView.setViewName("admin/user/create");
         return modelAndView;
     }
@@ -56,6 +60,7 @@ public class UserAdminController {
 
         User user = userService.findById(userId);
         modelAndView.addObject("user", user);
+        modelAndView.addObject("statuses", statusService.getStatuses());
         modelAndView.setViewName("admin/user/edit");
         return modelAndView;
     }
