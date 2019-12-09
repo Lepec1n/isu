@@ -20,6 +20,12 @@
                    class="form-control"/>
         </div>
         <div class="form-group">
+            <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                   class="validation-message"></label>
+            <input type="password" th:field="*{password}" placeholder="Пароль" required
+                   class="form-control"/>
+        </div>
+        <div class="form-group">
             <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
                    class="validation-message"></label>
             <input type="text" th:field="*{name}" placeholder="Имя" required
