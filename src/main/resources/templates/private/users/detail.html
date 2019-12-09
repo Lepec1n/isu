@@ -24,7 +24,8 @@
     </dl>
     <dl>
         <dt>Кольцо</dt>
-        <dd th:text="${user.getRing().getId()}"></dd>
+        <dd th:text="${user.getRing().getId()}" th:unless="${user.getRing() != null}"></dd>
+        <dd th:if="${user.getRing() == null}">-</dd>
     </dl>
 </div>
 </body>

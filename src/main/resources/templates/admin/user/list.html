@@ -32,7 +32,7 @@
                 <td th:text="${user.getUsername()}"></td>
                 <td th:text="${user.getName()}"></td>
                 <td th:text="${user.getLastName()}"></td>
-                <td th:text="${user.getStatus()}"></td>
+                <td th:text="${user.getStatus().getName()}"></td>
                 <td>
                     <a th:href="@{/admin/user/edit} + '/' + ${user.getId()}" class="btn btn-sm btn-primary"><i
                             class="fa fa-fw fa-edit"></i></a>

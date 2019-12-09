@@ -44,6 +44,7 @@ public class UserAdminController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ModelAndView create(@Valid User user) {
+        user.setActive(1);
         userService.create(user);
         return new ModelAndView("redirect:/admin/user/");
 
