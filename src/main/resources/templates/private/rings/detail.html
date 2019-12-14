@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout_private.html}">
 <head>
-    <title>Список колец</title>
+    <title>Анализ кольца</title>
 </head>
 <body>
 <div class="col-10" th:unless="${users == null}" layout:fragment="content">
-    <h1>Кольца</h1>
+    <h1>Анализ кольца</h1>
     <div class="alert alert-warning" th:if="${users == null || users.size() == 0}">
         К сожалению, не удалось найти кольца
     </div>
