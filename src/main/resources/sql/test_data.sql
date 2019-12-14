@@ -57,40 +57,40 @@ insert into groups values (2, 'BM2');
 insert into groups values (3, 'K3');
 insert into groups values (4, 'A4s');
 
-insert into literatures values (1, 'Книга рун', 'Это такая крутая книга, которая про руны, и вот это вот все. Должен прочитать каждый маг.', false);
-insert into literatures values (2, 'Основы волшебства', 'Фундаментальный труд для начинающих магов. Содержит базу и является основой всего и вся. Маги, побывавшие в ИТМО, говорят, что видели подобное на ОВТ', true);
-insert into literatures values (3, 'Некромантия для самых маленьких', 'Фундаментальный труд по дисциплине некромантия предназначенный для начинающих магов и их детишек.', false);
-insert into literatures values (4, 'Культ черной магии', 'Труд, демонстрирующий черную магию изнутри, все ее изъяны и возможности, а также минусы ее использования.', false);
+insert into literature values (1, true, 'Книга рун', 'Это такая крутая книга, которая про руны, и вот это вот все. Должен прочитать каждый маг.');
+insert into literature values (2, false, 'Основы волшебства', 'Фундаментальный труд для начинающих магов. Содержит базу и является основой всего и вся. Маги, побывавшие в ИТМО, говорят, что видели подобное на ОВТ');
+insert into literature values (3, false, 'Некромантия для самых маленьких', 'Фундаментальный труд по дисциплине некромантия предназначенный для начинающих магов и их детишек.');
+insert into literature values (4, false, 'Культ черной магии', 'Труд, демонстрирующий черную магию изнутри, все ее изъяны и возможности, а также минусы ее использования.');
 
-insert into literature_request(1, 1, 1);
-insert into literature_request(2, 2, 1);
-insert into literature_request(3, 2, 2);
-insert into literature_request(3, 3, 4);
+INSERT INTO literature_request VALUES (1, 1, 1);
+INSERT INTO literature_request VALUES (2, 1, 1);
+INSERT INTO literature_request VALUES (3, 2, 2);
+INSERT INTO literature_request VALUES (4, 4, 3);
 
-insert into mark values(1, 1, 1, 90);
-insert into mark values(2, 2, 1, 85);
-insert into mark values(3, 3, 1, 5);
-insert into mark values(4, 4, 1, 24);
-insert into mark values(5, 5, 1, 67);
-insert into mark values(6, 6, 1, 29);
+insert into marks values(1, 90, 1, 1);
+insert into marks values(2, 85, 2, 1);
+insert into marks values(3, 5, 3, 1);
+insert into marks values(4, 24, 4, 1);
+insert into marks values(5, 67, 5, 1);
+insert into marks values(6, 29, 6, 1);
 
-insert into mark values(7, 5, 2, 30);
-insert into mark values(8, 6, 2, 55);
-insert into mark values(9, 7, 2, 32);
-insert into mark values(10, 8, 2, 44);
-insert into mark values(11, 9, 2, 37);
-insert into mark values(12, 10, 2, 49);
+insert into marks values(7, 30, 5, 2);
+insert into marks values(8, 55, 6, 2);
+insert into marks values(9, 32, 7, 2);
+insert into marks values(10, 44, 8, 2);
+insert into marks values(11, 37, 9, 2);
+insert into marks values(12, 49, 10, 2);
 
-insert into mark values(13, 1, 3, 50);
-insert into mark values(14, 3, 3, 65);
-insert into mark values(15, 5, 3, 7);
-insert into mark values(16, 7, 3, 84);
-insert into mark values(17, 9, 3, 97);
-insert into mark values(18, 10, 3, 19);
+insert into marks values(13, 50, 1, 3);
+insert into marks values(14, 65, 3, 3);
+insert into marks values(15, 7, 5, 3);
+insert into marks values(16, 84, 7, 3);
+insert into marks values(17, 97, 9, 3);
+insert into marks values(18, 19, 10, 3);
 
-insert into ring(1, 1);
-insert into ring(2, 2);
-insert into ring(3, 3);
+insert into rings values (1, 1);
+insert into rings values (2, 2);
+insert into rings values (3, 3);
 
 insert into statuses values(1, 'Учащийся');
 insert into statuses values(2, 'Трудоустроен');
