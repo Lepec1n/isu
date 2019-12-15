@@ -23,9 +23,10 @@
             <tr>
                 <th scope="row" th:text="${iter.index + 1}"></th>
                 <td th:text="${user.getUsername()}"></td>
-                <td th:text="${user.getRing().getId()}" th:unless="${user.getRing() != null}"></td>
+                <td th:text="${user.getRing().getId()}" th:unless="${user.getRing() == null}"></td>
                 <td th:if="${user.getRing() == null}"></td>
-                <td th:text="${user.getGroup().getFaculty().getName()}"></td>
+                <td th:text="${user.getGroup().getFaculty().getName()}" th:unless="${user.getGroup().getFaculty() == null}"></td>
+                <td th:if="${user.getGroup().getFaculty() == null}"></td>
             </tr>
         </th:block>
         </tbody>
