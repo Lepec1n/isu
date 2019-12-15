@@ -4,11 +4,17 @@
     <title>Анализ кольца</title>
 </head>
 <body>
-<div class="col-10" th:unless="${users == null}" layout:fragment="content">
+<div class="col-10" layout:fragment="content">
     <h1>Анализ кольца</h1>
-    <div class="alert alert-warning" th:if="${users == null || users.size() == 0}">
+    <div class="alert alert-danger" th:unless="${error == null}" th:text="${error}"></div>
+    <div class="alert alert-warning" th:if="${error != null && (users == null || users.size() == 0)}">
         К сожалению, не удалось найти кольца
     </div>
+    <form class="form-inline">
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+               placeholder="ID кольца" name="ringId" required th:value="${ringId}">
+        <button type="submit" class="btn btn-primary mb-2">Поиск</button>
+    </form>
     <table class="table table-striped" th:unless="${users == null || users.size() == 0}">
         <thead>
         <tr>
