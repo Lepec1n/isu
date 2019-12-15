@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{common/layout_public.html}">
+<head>
+    <title>Анализ кольца</title>
+</head>
+<body>
+<div class="col-10" layout:fragment="content">
+    <h1>Анализ кольца</h1>
+    <div class="alert alert-danger" th:unless="${error == null}" th:text="${error}"></div>
+    <div class="alert alert-warning" th:if="${error != null && (users == null || users.size() == 0)}">
+        К сожалению, не удалось найти кольца
+    </div>
+    <form class="form-inline">
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+               placeholder="ID кольца" name="ringId" required th:value="${ringId}">
+        <button type="submit" class="btn btn-primary mb-2">Поиск</button>
+    </form>
+    <table class="table table-striped" th:unless="${users == null || users.size() == 0}">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Пользователь</th>
+            <th scope="col">ID Кольца</th>
+            <th scope="col">Факультет</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="user, iter : ${users}">
+            <tr>
+                <th scope="row" th:text="${iter.index + 1}"></th>
+                <td th:text="${user.getUsername()}"></td>
+                <td th:text="${user.getRing().getId()}" th:unless="${user.getRing() == null}"></td>
+                <td th:if="${user.getRing() == null}"></td>
+                <td th:text="${user.getGroup().getFaculty().getName()}" th:unless="${user.getGroup().getFaculty() == null}"></td>
+                <td th:if="${user.getGroup().getFaculty() == null}"></td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
