@@ -15,12 +15,10 @@
 
 <div th:insert="~{common/header :: student}"></div>
 <div class="container-fluid">
-    <div class="row" th:unless="${notifications == null || notifications.size() == 0}">
+    <div class="row" th:if="${#dates.month(#dates.createNow()) == 12 || #dates.month(#dates.createNow()) == 5}">
         <div class="col-12">
-            <div class="alert alert-primary">
-                <ul>
-                    <li th:each="notification: ${notifications}" th:text="notification"></li>
-                </ul>
+            <div class="alert alert-warning text-center">
+                Уважаемые студенты! Напоминаем, что в следующем месяце у вас сессия!
             </div>
         </div>
     </div>
