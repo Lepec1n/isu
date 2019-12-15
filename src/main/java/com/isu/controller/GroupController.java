@@ -1,7 +1,9 @@
 package com.isu.controller;
 
+import com.isu.model.Faculty;
 import com.isu.model.Group;
 import com.isu.model.User;
+import com.isu.service.interfaces.IFacultyService;
 import com.isu.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -20,11 +22,15 @@ public class GroupController {
     @Autowired
     private IUserService userService;
 
+    @Autowired
+    private IFacultyService facultyService;
+
     @RequestMapping(value = "/my_group", method = RequestMethod.GET)
     public ModelAndView myGroup() {
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByUsername(auth.getName());
+        List<Faculty> faculties = facultyService.findAll();
         Group group = new Group();
         List<User> students = new ArrayList<>();
         if (user != null) {
@@ -35,6 +41,7 @@ public class GroupController {
         }
         modelAndView.addObject("group", group);
         modelAndView.addObject("students", students);
+        modelAndView.addObject("faculties", faculties);
         modelAndView.setViewName("private/group/detail");
         return modelAndView;
     }

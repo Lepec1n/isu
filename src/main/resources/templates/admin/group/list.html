@@ -18,6 +18,7 @@
             <th scope="col">#</th>
             <th scope="col">ID</th>
             <th scope="col">Название</th>
+            <th scope="col">Факультет</th>
             <th scope="col">Действия</th>
         </tr>
         </thead>
@@ -27,6 +28,8 @@
                 <th scope="row" th:text="${iter.index + 1}"></th>
                 <td th:text="${group.getId()}"></td>
                 <td th:text="${group.getName()}"></td>
+                <td th:text="${group.getFaculty().getName()}" th:unless="${group.getFaculty() == null}"></td>
+                <td th:if="${group.getFaculty() == null}"></td>
                 <td>
                     <a th:href="@{/admin/group/edit} + '/' + ${group.getId()}" class="btn btn-sm btn-primary"><i
                             class="fa fa-fw fa-edit"></i></a>
