@@ -43,6 +43,11 @@ public class LiteratureServiceImpl implements ILiteratureService {
     }
 
     @Override
+    public List<Literature> searchLiterature(String name) {
+        return literatureRepository.findAllByNameContains(name);
+    }
+
+    @Override
     public LiteratureRequest createRequest(Literature literature, User user) {
         LiteratureRequest request = new LiteratureRequest();
         request.setLiterature(literature);

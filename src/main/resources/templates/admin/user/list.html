@@ -32,7 +32,8 @@
                 <td th:text="${user.getUsername()}"></td>
                 <td th:text="${user.getName()}"></td>
                 <td th:text="${user.getLastName()}"></td>
-                <td th:text="${user.getStatus().getName()}"></td>
+                <td th:text="${user.getStatus().getName()}" th:unless="${user.getStatus() == null}"></td>
+                <td th:if="${user.getStatus() == null}"></td>
                 <td>
                     <a th:href="@{/admin/user/edit} + '/' + ${user.getId()}" class="btn btn-sm btn-primary"><i
                             class="fa fa-fw fa-edit"></i></a>

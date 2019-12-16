@@ -14,6 +14,8 @@ public interface ILiteratureService {
 
     Literature findLiterature(String name);
 
+    List<Literature> searchLiterature(String name);
+
     LiteratureRequest createRequest(Literature literature, User user);
 
     LiteratureRequest leaveRequest(String literatureName, User user);
