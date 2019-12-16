@@ -59,6 +59,7 @@ public class GroupAdminController {
 
         Group group = groupService.findGroup(groupId);
         modelAndView.addObject("group", group);
+        modelAndView.addObject("faculties", facultyService.findAll());
         modelAndView.addObject("users", userService.findAll());
         modelAndView.setViewName("admin/group/edit");
         return modelAndView;
