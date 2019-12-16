@@ -9,6 +9,11 @@
     <div class="alert alert-warning" th:if="${literature == null || literature.size() == 0}">
         К сожалению, не удалось найти магические труды
     </div>
+    <form class="form-inline">
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+               placeholder="Название" name="name" th:value="${name}">
+        <button type="submit" class="btn btn-primary mb-2">Поиск</button>
+    </form>
     <table class="table table-striped" th:unless="${literature == null || literature.size() == 0}">
         <thead>
         <tr>
