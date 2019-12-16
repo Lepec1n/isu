@@ -1,0 +1,272 @@
+{
+  "id": "c0df23e3-cda1-45ad-9a1b-9e1739e3c106",
+  "version": "2.0",
+  "name": "isu",
+  "url": "http://localhost:8086/isu/login",
+  "tests": [{
+    "id": "88c8bbb4-2b0c-4915-ac98-f9127a31ba23",
+    "name": "login",
+    "commands": [{
+      "id": "6c33a7bf-6b6a-435a-8604-5b366141dba9",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8086/isu/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f278d770-3434-423e-92b9-b1ed66c10eed",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1680x1027",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe343d23-02c6-481b-90c5-ebcf836eb06a",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["css=#inputLogin", "css:finder"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "daniil_popov"
+    }, {
+      "id": "fdbd0ccb-7703-46a9-917a-dd8b1f3b3393",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "e943376f-46e2-4946-8ab4-d8cfc1647e26",
+      "comment": "",
+      "command": "click",
+      "target": "id=loginButton",
+      "targets": [
+        ["id=loginButton", "id"],
+        ["css=#loginButton", "css:finder"],
+        ["xpath=//button[@id='loginButton']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Войти')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2049f93b-eb05-432e-9d83-0de7c67d97ea",
+    "name": "my_groups",
+    "commands": [{
+      "id": "e16a9ab0-644d-4bb6-a5b9-92f2d1cc3d48",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8086/isu/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8bee0a0c-afec-4b1e-81a9-d9d4fb900623",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1680x1027",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b273edd0-fbb3-46bf-9884-e7a9737d2eaa",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["css=#inputLogin", "css:finder"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "daniil_popov"
+    }, {
+      "id": "b4cdcdeb-4a52-490f-b2c7-7f11dfc6c30b",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "613ac93d-0131-4bc5-a679-b814b60ab601",
+      "comment": "",
+      "command": "click",
+      "target": "id=loginButton",
+      "targets": [
+        ["id=loginButton", "id"],
+        ["css=#loginButton", "css:finder"],
+        ["xpath=//button[@id='loginButton']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Войти')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3408e5e9-0bb4-4b8a-a582-234d1d63cd95",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Моя группа",
+      "targets": [
+        ["linkText=Моя группа", "linkText"],
+        ["css=.nav > .nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Моя группа')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/isu/my_group')]", "xpath:href"],
+        ["xpath=//div/div/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Моя группа')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "993554e7-893e-485c-9fa0-7a80b7df7b08",
+    "name": "admin",
+    "commands": [{
+      "id": "f400f03f-bbc8-4d23-98f1-5740c5052175",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8086/isu/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fbdc934a-0503-4f95-a116-c6768b9728da",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1680x1027",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3d921e8-7761-4710-a49a-c76c7ec574d3",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["css=#inputLogin", "css:finder"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "archieve"
+    }, {
+      "id": "c7c4be06-f2ed-4969-aeb6-b9c50e33a920",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "f125f596-890e-4a44-8de6-7313b6a7c4a6",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=inputPassword",
+      "targets": [
+        ["id=inputPassword", "id"],
+        ["name=password", "name"],
+        ["css=#inputPassword", "css:finder"],
+        ["xpath=//input[@id='inputPassword']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "d5308e0b-d15f-442f-b707-1e373071f065",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "linkText=Выйти",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "eaa8db66-03ac-48f0-b574-6ce027df69c8",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8086/isu/admin/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "54978d76-d531-4d53-a63b-bddf08567ef4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Дисциплины",
+      "targets": [
+        ["linkText=Дисциплины", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Дисциплины')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/isu/admin/discipline/')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Дисциплины')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "63e04ede-5e3d-46e9-9a68-147e4daf30c9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Кольца",
+      "targets": [
+        ["linkText=Кольца", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Кольца')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/isu/admin/ring/')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Кольца')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "32bd0d58-f6e7-4585-9ecf-d39899c466ac",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Оценки",
+      "targets": [
+        ["linkText=Оценки", "linkText"],
+        ["css=.nav-item:nth-child(7) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Оценки')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/isu/admin/mark/')]", "xpath:href"],
+        ["xpath=//li[7]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Оценки')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4619b8b8-7e74-4829-9ddd-c566a2e777b3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Статусы",
+      "targets": [
+        ["linkText=Статусы", "linkText"],
+        ["css=.nav-item:nth-child(9) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Статусы')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/isu/admin/status/')]", "xpath:href"],
+        ["xpath=//li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Статусы')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "793cdf85-ad12-4fe2-bf1e-4640b72c7a9b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["88c8bbb4-2b0c-4915-ac98-f9127a31ba23"]
+  }],
+  "urls": ["http://localhost:8086/", "http://localhost:8086/isu", "http://localhost:8086/isu/login", "http://localhost:8086/isu/"],
+  "plugins": []
+}
