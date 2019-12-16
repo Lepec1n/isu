@@ -1,4 +1,4 @@
-package com.isu.controller;
+package com.isu.controller.common;
 
 
 import com.isu.model.User;
