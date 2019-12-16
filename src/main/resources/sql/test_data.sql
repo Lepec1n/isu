@@ -1,4 +1,3 @@
-DELETE ALL
 ALTER TABLE users DISABLE TRIGGER ALL;
 ALTER TABLE disciplines DISABLE TRIGGER ALL;
 ALTER TABLE faculties DISABLE TRIGGER ALL;
@@ -11,29 +10,17 @@ ALTER TABLE roles DISABLE TRIGGER ALL;
 ALTER TABLE statuses DISABLE TRIGGER ALL;
 ALTER TABLE users_roles DISABLE TRIGGER ALL;
 
+DELETE FROM literature_request;
 DELETE FROM users;
 DELETE FROM disciplines;
 DELETE FROM faculties;
 DELETE FROM groups;
 DELETE FROM literature;
-DELETE FROM literature_request;
 DELETE FROM marks;
 DELETE FROM rings;
 DELETE FROM roles;
 DELETE FROM statuses;
 DELETE FROM users_roles;
-
-ALTER TABLE users ENABLE TRIGGER ALL;
-ALTER TABLE disciplines ENABLE TRIGGER ALL;
-ALTER TABLE faculties ENABLE TRIGGER ALL;
-ALTER TABLE groups ENABLE TRIGGER ALL;
-ALTER TABLE literature ENABLE TRIGGER ALL;
-ALTER TABLE literature_request ENABLE TRIGGER ALL;
-ALTER TABLE marks ENABLE TRIGGER ALL;
-ALTER TABLE rings ENABLE TRIGGER ALL;
-ALTER TABLE roles ENABLE TRIGGER ALL;
-ALTER TABLE statuses ENABLE TRIGGER ALL;
-ALTER TABLE users_roles ENABLE TRIGGER ALL;
 
 insert into roles values (1, 'ADMIN');
 insert into roles values (2, 'STUDENT');
@@ -47,17 +34,17 @@ insert into statuses values
 --qwerty
 insert into users values
 (1, 1, 'Пулич', 'Алексей',
-'$2a$10$faK26S4OIIQ7isLKDg1Mhe4cNp1t6ctafaALsWOvGkS4W6RIH8a2e', 'alexey_pulich', 1, 1);
+'$2a$10$faK26S4OIIQ7isLKDg1Mhe4cNp1t6ctafaALsWOvGkS4W6RIH8a2e', 'alexey_pulich', 1, 1, 1);
 
 --12345
 insert into users values
 (2, 1, 'Попов', 'Даниил',
-'$2a$10$.HlQGRg0R2FNps2clXEoiOcIHOS8/ao9/H/inktXbVj2kkTVoVise', 'daniil_popov', 1, 1);
+'$2a$10$.HlQGRg0R2FNps2clXEoiOcIHOS8/ao9/H/inktXbVj2kkTVoVise', 'daniil_popov', 1, 1, 1);
 
 --asdfg
 insert into users values
 (3, 1, 'Белов', 'Станислав',
-'$2a$10$VORmtNmSyQ1pKB8REXtXseUc2CwXj6bQ0rX3mKVfFVitMWvdSHOtC', 'stanislav_belov', 1, 1);
+'$2a$10$VORmtNmSyQ1pKB8REXtXseUc2CwXj6bQ0rX3mKVfFVitMWvdSHOtC', 'stanislav_belov', 1, 1, 1);
 
 --admin
 insert into users values
@@ -134,3 +121,15 @@ insert into statuses values(2, 'Трудоустроен');
 insert into statuses values(3, 'Отчислен');
 insert into statuses values(4, 'Отпуск');
 insert into statuses values(5, 'Уволен');
+
+ALTER TABLE users ENABLE TRIGGER ALL;
+ALTER TABLE disciplines ENABLE TRIGGER ALL;
+ALTER TABLE faculties ENABLE TRIGGER ALL;
+ALTER TABLE groups ENABLE TRIGGER ALL;
+ALTER TABLE literature ENABLE TRIGGER ALL;
+ALTER TABLE literature_request ENABLE TRIGGER ALL;
+ALTER TABLE marks ENABLE TRIGGER ALL;
+ALTER TABLE rings ENABLE TRIGGER ALL;
+ALTER TABLE roles ENABLE TRIGGER ALL;
+ALTER TABLE statuses ENABLE TRIGGER ALL;
+ALTER TABLE users_roles ENABLE TRIGGER ALL;
