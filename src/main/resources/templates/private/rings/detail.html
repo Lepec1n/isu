@@ -8,7 +8,7 @@
     <h1>Анализ кольца</h1>
     <div class="alert alert-danger" th:unless="${error == null}" th:text="${error}"></div>
     <div class="alert alert-warning" th:if="${error != null && (users == null || users.size() == 0)}">
-        К сожалению, не удалось найти кольца
+        К сожалению, не удалось найти кольцо
     </div>
     <form class="form-inline">
         <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
