@@ -24,7 +24,10 @@
                 <td><a th:href="@{/literature/} + ${paper.getId()}" th:text="${paper.getName()}"></a> </td>
                 <td>
                     <!-- TODO обработчик заявки -->
-                    <a href="#" class="btn btn-sm btn-primary" th:unless="${paper.getGivenOut() == true}">
+                    <a href="#" class="btn btn-sm btn-primary" th:unless="${paper.getGivenOut()}">
+                        Оставить заявку
+                    </a>
+                    <a href="#" class="btn btn-sm btn-primary disabled" th:unless="${!paper.getGivenOut()}">
                         Оставить заявку
                     </a>
                 </td>
