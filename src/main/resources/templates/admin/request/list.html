@@ -26,7 +26,7 @@
             <tr>
                 <th scope="row" th:text="${iter.index + 1}"></th>
                 <td th:text="${request.getId()}"></td>
-                <td th:text="${request.getLiterature().getName()}"></td>
+                <td><a th:href="@{/admin/literature/edit/{id}(id=${request.getLiterature().getId()})}" th:text="${request.getLiterature().getName()}"></a></td>
                 <td th:text="${request.getUser().getUsername()}"></td>
                 <td>
                     <a th:href="@{/admin/request/edit} + '/' + ${request.getId()}" class="btn btn-sm btn-primary"><i
