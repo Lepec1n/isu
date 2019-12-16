@@ -51,7 +51,17 @@ public class FacultyTest {
         assertTrue(faculties.stream().filter(f -> f.getId()
                 .equals(testId)).findAny().isPresent());
         assertTrue(faculties.stream().filter(f -> f.getId()
-                .equals(testId2)).findAny().isPresent());
+                .equals(testId2)).findAny().isPresent(  ));
     }
+
+    @Test
+    public void deleteFacultyTest(){
+        Faculty testFaculty = new Faculty();
+        testFaculty.setName("Absolutely original faculty name");
+        testFaculty = facultyService.create(testFaculty);
+        assertTrue(testFaculty.getId()!=null);
+        facultyService.delete(testFaculty.getId());
+    }
+
 
 }
