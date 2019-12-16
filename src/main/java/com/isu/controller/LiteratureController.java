@@ -54,7 +54,7 @@ public class LiteratureController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/request/{literatureId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/request/{literatureId}", method = RequestMethod.POST)
     public ModelAndView addRequest(@PathVariable("literatureId") long literatureId) {
         ModelAndView modelAndView = new ModelAndView();
         Literature literature = literatureService.findLiterature(literatureId);
@@ -62,7 +62,7 @@ public class LiteratureController {
         User user = userService.findUserByUsername(auth.getName());
         literatureService.createRequest(literature, user);
         modelAndView.addObject("literature", literature);
-        modelAndView.setViewName("private/literature/detail");
+        modelAndView.setViewName("private/literature/request");
         return modelAndView;
     }
 }

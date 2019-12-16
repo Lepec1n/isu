@@ -28,10 +28,9 @@
                 <th scope="row" th:text="${iter.index + 1}"></th>
                 <td><a th:href="@{/literature/} + ${paper.getId()}" th:text="${paper.getName()}"></a> </td>
                 <td>
-                    <!-- TODO обработчик заявки -->
-                    <a href="#" class="btn btn-sm btn-primary" th:unless="${paper.getGivenOut()}">
-                        Оставить заявку
-                    </a>
+                    <form th:action="@{/literature/request/{id}(id=${paper.getId()})}" method="POST" th:unless="${paper.getGivenOut()}">
+                        <button class="btn btn-sm btn-primary">Оставить заявку</button>
+                    </form>
                     <a href="#" class="btn btn-sm btn-primary disabled" th:unless="${!paper.getGivenOut()}">
                         Оставить заявку
                     </a>
